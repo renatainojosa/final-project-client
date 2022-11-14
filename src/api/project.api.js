@@ -15,9 +15,9 @@ class ProjectApi {
   }
   
   
-  getUsers = async () => {
+  getPets = async () => {
     try {
-      const { data } = await this.api.get('/auth/users')
+      const { data } = await this.api.get('/pets')
       return data;
     } catch (error) {
       throw error;

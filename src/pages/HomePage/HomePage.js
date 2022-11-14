@@ -1,22 +1,9 @@
 import "./HomePage.css";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
-import projectApi from "../../api/project.api";
 import imgPets from "../../images/pngwing.com.png";
 
 const HomePage = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    projectApi
-      .getUsers()
-      .then((result) => {
-        setUsers(result);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  
 
   return (
     <div className="home-container">
@@ -42,13 +29,6 @@ const HomePage = () => {
           </button>
         </Link>
       </div>
-      {/* {users.map((user) => {
-        return (
-        <div key={user._id}>
-          <h1>{user.username}</h1>
-        </div>
-        )
-      })} */}
       <img className="img-pets" src={imgPets} alt="img-pets" />
     </div>
   );
