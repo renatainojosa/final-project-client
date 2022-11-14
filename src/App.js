@@ -6,6 +6,8 @@ import SignUp from './pages/SignUp/SignUp';
 import Login from './pages/Login/Login';
 import Pets from './pages/Pets/Pets';
 import Ongs from './pages/Ongs/Ongs';
+import Footer from './components/Footer/Footer';
+import Instructions from './pages/Instructions/Instructions';
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/pets' element={<Pets/>}/>
         <Route path='/ongs' element={<Ongs/>}/>
+        <Route path='/instructions' element={<Instructions/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
