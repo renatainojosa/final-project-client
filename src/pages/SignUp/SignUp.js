@@ -1,8 +1,16 @@
 import './SignUp.css'
+import {Link} from 'react-router-dom'
 
 const SignUp = () => {
   return (
-    <div>SignUp</div>
+    <div>
+      <Link to="/signup/user">
+        User
+      </Link>
+      <Link to="/signup/ong">
+        ONG
+      </Link>
+    </div>
   )
 }
 

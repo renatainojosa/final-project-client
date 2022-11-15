@@ -24,13 +24,31 @@ class ProjectApi {
     }
   }
 
-  signup = async ({ username, email, password, contact }) => {
+  signup = async ({ username, email, password, contact, profileImgUrl }) => {
     try {
       const { data } = await this.api.post("/auth/signup", {
         username,
         email,
         password,
         contact,
+        profileImgUrl
+      });
+      return data;
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    }
+  };
+
+  signupOng = async ({ username, email, password, contact, identification, profileImgUrl, acceptDonation }) => {
+    try {
+      const { data } = await this.api.post("/auth-ongs/signup", {
+        username,
+        email,
+        password,
+        contact,
+        identification,
+        profileImgUrl,
+        acceptDonation
       });
       return data;
     } catch (error) {

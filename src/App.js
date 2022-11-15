@@ -8,6 +8,8 @@ import Pets from './pages/Pets/Pets';
 import Ongs from './pages/Ongs/Ongs';
 import Footer from './components/Footer/Footer';
 import Instructions from './pages/Instructions/Instructions';
+import SignUpOng from './pages/SignUpOng/SignUpOng';
+import SignUpUser from './pages/SignUpUser/SignUpUser';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage/>}/>
         <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/signup/user' element={<SignUpUser/>}/>
+        <Route path='/signup/ong' element={<SignUpOng/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/pets' element={<Pets/>}/>
         <Route path='/ongs' element={<Ongs/>}/>
