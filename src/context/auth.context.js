@@ -15,11 +15,13 @@ const AuthProviderWrapper = ({children}) => {
     const storedToken = localStorage.getItem("token");
     try {
       if (!storedToken) {
+        setIsLoggedIn(false);
         throw new Error();
       }
       const responseUser = api.verify(storedToken);
       const responseOng = api.verifyOng(storedToken);
       setIsLoggedIn(true);
+      // responseUser.type = 
       setUser(responseUser);
       setOng(responseOng);
     } catch (error) {
