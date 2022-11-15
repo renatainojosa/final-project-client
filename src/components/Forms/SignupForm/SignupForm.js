@@ -1,7 +1,7 @@
-import './UserForm.css';
+import './SignupForm.css';
 import { useState } from 'react';
 
-const UserForm = ({loading, onSubmit, submitText}) => {
+const SignupForm = ({loading, onSubmit, submitText}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
@@ -33,11 +33,11 @@ const UserForm = ({loading, onSubmit, submitText}) => {
     </div>
     <div className="form-control">
       <label htmlFor="img">Profile Image:</label>
-      <input type='file' value={profileImgUrl} onChange={(e) => setProfileImgUrl(e.target.value)} />
+      <input type='text' value={profileImgUrl} onChange={(e) => setProfileImgUrl(e.target.value)} />
     </div>
     {loading ? 'Loading...' : <button>{submitText}</button>}
   </form>
   )
 }
 
-export default UserForm
+export default SignupForm;

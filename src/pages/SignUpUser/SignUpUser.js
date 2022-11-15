@@ -1,7 +1,7 @@
 import "./SignUpUser.css";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import UserForm from "../../components/Forms/UserForm/UserForm";
+import SignupForm from "../../components/Forms/SignupForm/SignupForm";
 import api from "../../api/project.api";
 
 const SignUpUser = () => {
@@ -23,7 +23,7 @@ const SignUpUser = () => {
   return (
   <div className="signup-container">
     <h2 className="title">Signup</h2>
-    <UserForm onSubmit={onSubmit} submitText='Register' loading={loading} />
+    <SignupForm onSubmit={onSubmit} submitText='Register' loading={loading} />
   </div> 
   );
 };
