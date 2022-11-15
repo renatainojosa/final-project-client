@@ -19,7 +19,7 @@ const SignUpOng = () => {
   }) => {
     setLoading(true);
     try {
-      await api.signup({
+      await api.signupOng({
         username,
         email,
         password,
