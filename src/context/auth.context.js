@@ -1,21 +1,15 @@
 import { createContext, useState, useEffect } from "react";
 import api from "../../src/api/project.api";
+import { storeToken, removeToken } from "../utils/token.utils";
 
 const AuthContext = createContext();
 
-const AuthProviderWrapper = (props) => {
+const AuthProviderWrapper = ({children}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [ong, setOng] = useState(null);
 
-  const storeToken = (token) => {
-    localStorage.setItem("token", token);
-  };
-
-  const removeToken = () => {
-    localStorage.removeItem("token");
-  };
 
   const authenticateUser = async () => {
     const storedToken = localStorage.getItem("token");
@@ -58,7 +52,7 @@ const AuthProviderWrapper = (props) => {
         logoutUser,
       }}
     >
-      {props.children}
+      {children}
     </AuthContext.Provider>
   );
 };
