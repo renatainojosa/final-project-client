@@ -29,7 +29,9 @@ const HomePage = () => {
           </button>
         </Link>
       </div>
-      <img className="img-pets" src={imgPets} alt="img-pets" />
+      <div className="pet-img">
+        <img className="img-pets" src={imgPets} alt="img-pets" />
+      </div>
     </div>
   );
 };
