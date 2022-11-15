@@ -39,6 +39,23 @@ class ProjectApi {
     }
   };
 
+  signupOng = async ({ username, email, password, contact, identification, profileImgUrl, acceptDonation }) => {
+    try {
+      const { data } = await this.api.post("/auth-ongs/signup", {
+        username,
+        email,
+        password,
+        contact,
+        identification,
+        profileImgUrl,
+        acceptDonation
+      });
+      return data;
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    }
+  };
+
   login = async ({ email, password }) => {
     try {
       const { data } = await this.api.post("/auth/login", { email, password });

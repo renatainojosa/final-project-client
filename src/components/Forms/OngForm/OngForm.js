@@ -1,22 +1,24 @@
-import './SignupForm.css';
+import './OngForm.css';
 import { useState } from 'react';
 
-const SignupForm = ({loading, onSubmit, submitText}) => {
+const OngForm = ({loading, onSubmit, submitText}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
     const [contact, setContact] = useState("");
     const [profileImgUrl, setProfileImgUrl] = useState("");
+    const [identification, setIdentification] = useState("");
+    const [acceptDonation, setAcceptDonation] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ username, email, password, contact, profileImgUrl });
+        onSubmit({ username, email, password, contact, identification, profileImgUrl, acceptDonation });
     };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
     <div className="form-control">
-      <label htmlFor="username">Username:</label>
+      <label htmlFor="username">ONG name:</label>
       <input type='text' value={username} onChange={(e) => setUsername(e.target.value)} />
     </div>
     <div className="form-control">
@@ -32,12 +34,23 @@ const SignupForm = ({loading, onSubmit, submitText}) => {
       <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
     </div>
     <div className="form-control">
-      <label htmlFor="img">Profile Image:</label>
-      <input type='text' value={profileImgUrl} onChange={(e) => setProfileImgUrl(e.target.value)} />
+      <label htmlFor="identification">Identification:</label>
+      <input type='text' value={identification} onChange={(e) => setIdentification(e.target.value)} />
+    </div>
+    <div className="form-control">
+      <label htmlFor="profileImgUrl">Profile Image:</label>
+      <input type='file' value={profileImgUrl} onChange={(e) => setProfileImgUrl(e.target.value)} />
+    </div>
+    <div className="form-control">
+      <label htmlFor="acceptDonation">Accept Donation:</label>
+      <select value={acceptDonation} onChange={(e) => setAcceptDonation(e.target.value)}>
+        <option value={true}>Yes</option>
+        <option value={false}>No</option>
+      </select>
     </div>
     {loading ? 'Loading...' : <button>{submitText}</button>}
   </form>
   )
 }
 
-export default SignupForm;
+export default OngForm;
