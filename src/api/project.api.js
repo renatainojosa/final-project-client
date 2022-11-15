@@ -78,6 +78,20 @@ class ProjectApi {
       throw error.response.data || error.message || error;
     }
   };
+
+  verifyOng = async () => {
+    const token = getToken(); 
+    try {
+      const { data } = this.api.get("/auth-ongs/verify", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return data;
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    }
+  };
 }
 
 const projectApi = new ProjectApi(baseURL);
