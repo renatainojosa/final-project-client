@@ -1,0 +1,12 @@
+.home-container {
+    position: absolute;
+    top: 95px;
+    min-height: 99vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.pet-img {
+    bottom: 20px;
+}
