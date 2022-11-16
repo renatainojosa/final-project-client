@@ -4,14 +4,13 @@ import { useState } from 'react';
 const UserForm = ({loading, onSubmit, submitText}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
     const [username, setUsername] = useState("");
     const [contact, setContact] = useState("");
     const [profileImgUrl, setProfileImgUrl] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ username, email, password, confirmPassword, contact, profileImgUrl });
+        onSubmit({ username, email, password, contact, profileImgUrl });
     };
 
   return (
@@ -31,10 +30,6 @@ const UserForm = ({loading, onSubmit, submitText}) => {
     <div className="form-control">
       <label htmlFor="password">Password:</label>
       <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-    </div>
-    <div className="form-control">
-      <label htmlFor="confirmPassword">Confirm Password:</label>
-      <input type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
     </div>
     <div className="form-control">
       <label htmlFor="profileImgUrl">Profile Image:</label>
