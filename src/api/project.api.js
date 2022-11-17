@@ -24,13 +24,14 @@ class ProjectApi {
     }
   }
 
-  signup = async ({ username, email, password, contact }) => {
+  signup = async ({ username, email, password, contact, profileImgUrl }) => {
     try {
       const { data } = await this.api.post("/auth/signup", {
         username,
         email,
         password,
         contact,
+        profileImgUrl
       });
       return data;
     } catch (error) {
