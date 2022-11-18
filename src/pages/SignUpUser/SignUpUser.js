@@ -17,7 +17,7 @@ const SignUpUser = () => {
   }) => {
     setLoading(true);
     try {
-      await api.signup({ username, email, password, contact, profileImgUrl });
+      await api.signup({ username, email, password, contact });
       navigate("/login");
     } catch (error) {
       // throw error.response.data || error.message || error;
