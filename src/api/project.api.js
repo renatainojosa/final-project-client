@@ -33,7 +33,6 @@ class ProjectApi {
         contact,
         profileImgUrl
       });
-      console.log(data)
       return data;
     } catch (error) {
       throw error.response.data || error.message || error;
