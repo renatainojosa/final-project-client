@@ -12,8 +12,7 @@ const SignUpUser = () => {
     username,
     email,
     password,
-    contact,
-    profileImgUrl,
+    contact
   }) => {
     setLoading(true);
     try {
