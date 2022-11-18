@@ -12,11 +12,12 @@ const SignUpUser = () => {
     username,
     email,
     password,
-    contact
+    contact,
+    profileImgUrl,
   }) => {
     setLoading(true);
     try {
-      await api.signup({ username, email, password, contact });
+      await api.signup({ username, email, password, contact, profileImgUrl });
       navigate("/login");
     } catch (error) {
       // throw error.response.data || error.message || error;
