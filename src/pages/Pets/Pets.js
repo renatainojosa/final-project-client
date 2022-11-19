@@ -1,12 +1,12 @@
 import './Pets.css'
-import projectApi from "../../api/project.api";
+import api from "../../api/project.api";
 import { useState, useEffect } from 'react';
 
 const Pets = () => {
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
-    projectApi
+    api
       .getPets()
       .then((result) => {
         setPets(result);

@@ -12,6 +12,8 @@ import SignUpOng from './pages/SignUpOng/SignUpOng';
 import SignUpUser from './pages/SignUpUser/SignUpUser';
 import Error from './pages/Error/Error';
 import MyProfile from './pages/MyProfile/MyProfile';
+import MyPets from './pages/MyPets/MyPets';
+import NewPet from './pages/NewPet/NewPet';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path='/ongs' element={<Ongs/>}/>
         <Route path='/instructions' element={<Instructions/>} />
         <Route path='/my-profile' element={<MyProfile />} />
+        <Route path='/my-profile/my-pets' element ={<MyPets />} />
+        <Route path='/my-profile/new-pet' element ={<NewPet />} />
         <Route path='/*' element={<Error />} />
       </Routes>
       <Footer/>
