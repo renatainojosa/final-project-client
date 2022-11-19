@@ -38,14 +38,13 @@ class ProjectApi {
     try {
       const { data } = await this.api.post("/auth/signup", userData, {
         headers: { 'content-type': 'multipart/form-data' }
-      })
-      // , {
-      //   username,
-      //   email,
-      //   password,
-      //   contact,
-      //   profileImgUrl
-      // });
+      }, {
+          username,
+          email,
+          password,
+          contact,
+          profileImgUrl
+        });
       return data;
     } catch (error) {
       throw error.response.data || error.message || error;
