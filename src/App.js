@@ -11,6 +11,10 @@ import Instructions from './pages/Instructions/Instructions';
 import SignUpOng from './pages/SignUpOng/SignUpOng';
 import SignUpUser from './pages/SignUpUser/SignUpUser';
 import Error from './pages/Error/Error';
+import MyProfile from './pages/MyProfile/MyProfile';
+import MyPets from './pages/MyPets/MyPets';
+import NewPet from './pages/NewPet/NewPet';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -22,9 +26,12 @@ function App() {
         <Route path='/signup/user' element={<SignUpUser/>}/>
         <Route path='/signup/ong' element={<SignUpOng/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/pets' element={<Pets/>}/>
+        <Route path='/pets' element={<PrivateRoute><Pets/></PrivateRoute>}/>
         <Route path='/ongs' element={<Ongs/>}/>
         <Route path='/instructions' element={<Instructions/>} />
+        <Route path='/my-profile' element={<PrivateRoute><MyProfile /></PrivateRoute>} />
+        <Route path='/my-profile/my-pets' element ={<PrivateRoute><MyPets /></PrivateRoute>} />
+        <Route path='/my-profile/new-pet' element ={<PrivateRoute><NewPet /></PrivateRoute>} />
         <Route path='/*' element={<Error />} />
       </Routes>
       <Footer/>

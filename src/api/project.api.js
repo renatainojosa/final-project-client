@@ -7,15 +7,12 @@ const getToken = () => {
   return localStorage.getItem("token");
 };
 
-
-
 class ProjectApi {
   constructor(baseURL) {
     this.api = axios.create({
       baseURL
     });
   }
-  
   
   getPets = async () => {
     try {
@@ -26,6 +23,26 @@ class ProjectApi {
     }
   }
 
+  newPet = async ({name, description, category, gender, breed, age, color, castrated, vaccinated, profileImgUrl}) => {
+    const petData = new FormData();
+    petData.append('name', name);
+    petData.append('description', description);
+    petData.append('category', category);
+    petData.append('gender', gender);
+    petData.append('breed', breed);
+    petData.append('age', age);
+    petData.append('color', color);
+    petData.append('castrated', castrated);
+    petData.append('vaccinated', vaccinated);
+    petData.append('profileImgUrl', profileImgUrl);
+
+    try {
+      const { data } = this.api.post("/pets/new-pet", petData);
+      return data;
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    }
+  };
 
   signup = async ({ username, email, password, contact, profileImgUrl }) => {
     const userData = new FormData();
@@ -60,6 +77,22 @@ class ProjectApi {
     }
   };
 
+  editUser = async ({ username, email, password, contact, profileImgUrl }) => {
+    const userData = new FormData();
+    userData.append('username', username);
+    userData.append('email', email);
+    userData.append('password', password);
+    userData.append('contact', contact);
+    userData.append('profileImgUrl', profileImgUrl);
+
+    try {
+      const { data } = await this.api.put("/auth/:userId/edit", userData);
+      return data;
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    }
+  };
+
   login = async ({ email, password }) => {
     try {
       const { data } = await this.api.post("/auth/login", { email, password });
@@ -68,11 +101,22 @@ class ProjectApi {
       throw error.response.data || error.message || error;
     }
   };
+  
+  loginOng = async ({ email, password }) => {
+    try {
+      const { data } = await this.api.post("/auth-ongs/login", { email, password });
+      storeToken(data.token);
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    }
+  };
+
+  
 
   verify = async () => {
     const token = getToken(); 
     try {
-      const { data } = this.api.get("/auth/verify", {
+      const { data } = await this.api.get("/auth/verify", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -86,7 +130,7 @@ class ProjectApi {
   verifyOng = async () => {
     const token = getToken(); 
     try {
-      const { data } = this.api.get("/auth-ongs/verify", {
+      const { data } = await this.api.get("/auth-ongs/verify", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

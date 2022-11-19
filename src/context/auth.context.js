@@ -1,14 +1,16 @@
 import { createContext, useState, useEffect } from "react";
 import api from "../../src/api/project.api";
 import { storeToken, removeToken } from "../utils/token.utils";
+import { useNavigate } from "react-router-dom"; 
 
 const AuthContext = createContext();
 
 const AuthProviderWrapper = ({children}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState(null);
-  const [ong, setOng] = useState(null);
+  const [user, setUser] = useState({});
+  const [ong, setOng] = useState({});
+  const navigate = useNavigate();
 
 
   const authenticateUser = async () => {
@@ -18,12 +20,26 @@ const AuthProviderWrapper = ({children}) => {
         setIsLoggedIn(false);
         throw new Error();
       }
-      const responseUser = api.verify(storedToken);
-      const responseOng = api.verifyOng(storedToken);
+      const response = await Promise.any([api.verify(storedToken), api.verifyOng(storedToken)])
+      // const responseUser = await api.verify(storedToken);
+      // const responseOng = await api.verifyOng(storedToken);
+      
+      console.log(response.type)
       setIsLoggedIn(true);
+      setUser(response);
+      setOng(response);
+      // if (response.type === 'Ong') {
+      //   setOng(response)
+      // } else {
+      //   setUser(response);
+      //   console.log(user)
+      // }
+      
+      
+      // setIsLoggedIn(true);
       // responseUser.type = 
-      setUser(responseUser);
-      setOng(responseOng);
+      // setUserOrOng(response);
+      // setOng(!!response.identification)
     } catch (error) {
       setIsLoggedIn(false);
       setUser(null);
@@ -40,6 +56,7 @@ const AuthProviderWrapper = ({children}) => {
   const logoutUser = () => {
     removeToken();
     authenticateUser();
+    navigate('/');
   };
 
   return (
