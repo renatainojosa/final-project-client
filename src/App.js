@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Instructions from './pages/Instructions/Instructions';
 import SignUpOng from './pages/SignUpOng/SignUpOng';
 import SignUpUser from './pages/SignUpUser/SignUpUser';
+import Error from './pages/Error/Error';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/pets' element={<Pets/>}/>
         <Route path='/ongs' element={<Ongs/>}/>
         <Route path='/instructions' element={<Instructions/>} />
+        <Route path='/*' element={<Error />} />
       </Routes>
       <Footer/>
     </div>

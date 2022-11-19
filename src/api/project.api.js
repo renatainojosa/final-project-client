@@ -28,15 +28,15 @@ class ProjectApi {
 
 
   signup = async ({ username, email, password, contact, profileImgUrl }) => {
-    
+    const userData = new FormData();
+    userData.append('username', username);
+    userData.append('email', email);
+    userData.append('password', password);
+    userData.append('contact', contact);
+    userData.append('profileImgUrl', profileImgUrl);
+
     try {
-      const { data } = await this.api.post("/auth/signup", {
-          username,
-          email,
-          password,
-          contact,
-          profileImgUrl
-        });
+      const { data } = await this.api.post("/auth/signup", userData);
       return data;
     } catch (error) {
       throw error.response.data || error.message || error;
@@ -44,16 +44,16 @@ class ProjectApi {
   };
 
   signupOng = async ({ username, email, password, contact, identification, profileImgUrl, acceptDonation }) => {
+    const ongData = new FormData();
+    ongData.append('username', username);
+    ongData.append('email', email);
+    ongData.append('password', password);
+    ongData.append('contact', contact);
+    ongData.append('identification', identification);
+    ongData.append('acceptDonation', acceptDonation);
+    ongData.append('profileImgUrl', profileImgUrl);
     try {
-      const { data } = await this.api.post("/auth-ongs/signup", {
-        username,
-        email,
-        password,
-        contact,
-        identification,
-        profileImgUrl,
-        acceptDonation
-      });
+      const { data } = await this.api.post("/auth-ongs/signup", ongData);
       return data;
     } catch (error) {
       throw error.response.data || error.message || error;

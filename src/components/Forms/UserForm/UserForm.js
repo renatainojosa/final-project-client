@@ -33,7 +33,7 @@ const UserForm = ({loading, onSubmit, submitText}) => {
     </div>
     <div className="form-control">
       <label htmlFor="profileImgUrl">Profile Image:</label>
-      <input type='file' value={profileImgUrl} onChange={(e) => setProfileImgUrl(e.target.value)} />
+      <input type='file' onChange={(e) => setProfileImgUrl(e.target.files[0])} />
     </div>
     {loading ? 'Loading...' : <button>{submitText}</button>}
   </form>
