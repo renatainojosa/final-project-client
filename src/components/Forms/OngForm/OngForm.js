@@ -69,8 +69,7 @@ const OngForm = ({ loading, onSubmit, submitText }) => {
         <label htmlFor="profileImgUrl">Profile Image:</label>
         <input
           type="file"
-          value={profileImgUrl}
-          onChange={(e) => setProfileImgUrl(e.target.value)}
+          onChange={(e) => setProfileImgUrl(e.target.files[0])}
         />
       </div>
       <div className="form-control">
