@@ -44,9 +44,9 @@ const SignUpUser = () => {
         userData.append('password', password);
         userData.append('contact', contact);
         userData.append('profileImgUrl', profileImgUrl);
-        const response =  await api.signup(userData);
+        await api.signup(userData);
         navigate("/login");
-        return response
+        
       } catch (error) {
         console.log(error)
       } finally {
