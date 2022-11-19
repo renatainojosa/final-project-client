@@ -36,10 +36,9 @@ class ProjectApi {
     userData.append('profileImgUrl', profileImgUrl)
 
     try {
-      const config = {
+      const { data } = await this.api.post("/auth/signup", userData, {
         headers: { 'content-type': 'multipart/form-data' }
-      }
-      const { data } = await this.api.post("/auth/signup", userData, config)
+      })
       // , {
       //   username,
       //   email,
