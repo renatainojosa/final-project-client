@@ -8,8 +8,8 @@ const AuthContext = createContext();
 const AuthProviderWrapper = ({children}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState();
-  const [ong, setOng] = useState();
+  const [user, setUser] = useState({});
+  const [ong, setOng] = useState({});
   const navigate = useNavigate();
 
 
@@ -32,7 +32,9 @@ const AuthProviderWrapper = ({children}) => {
       //   setOng(response)
       // } else {
       //   setUser(response);
+      //   console.log(user)
       // }
+      
       
       // setIsLoggedIn(true);
       // responseUser.type = 
