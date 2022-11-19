@@ -27,10 +27,16 @@ class ProjectApi {
   }
 
 
-  signup = async (formValues) => {
+  signup = async ({ username, email, password, contact, profileImgUrl }) => {
     
     try {
-      const { data } = await this.api.post("/auth/signup", formValues);
+      const { data } = await this.api.post("/auth/signup", {
+          username,
+          email,
+          password,
+          contact,
+          profileImgUrl
+        });
       return data;
     } catch (error) {
       throw error.response.data || error.message || error;
