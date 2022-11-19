@@ -78,7 +78,7 @@ const SignUpUser = () => {
     </div>
     <div className="form-control">
       <label htmlFor="profileImgUrl">Profile Image:</label>
-      <input type='file' value={profileImgUrl} onChange={(e) => setProfileImgUrl(e.target.files[0])} />
+      <input type='file' value={profileImgUrl} onChange={(e) => setProfileImgUrl(e.target.value)} />
     </div>
     {loading ? 'Loading...' : <button>register</button>}
   </form>
