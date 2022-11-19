@@ -7,15 +7,12 @@ const getToken = () => {
   return localStorage.getItem("token");
 };
 
-
-
 class ProjectApi {
   constructor(baseURL) {
     this.api = axios.create({
       baseURL
     });
   }
-  
   
   getPets = async () => {
     try {
@@ -25,7 +22,6 @@ class ProjectApi {
       throw error;
     }
   }
-
 
   signup = async ({ username, email, password, contact, profileImgUrl }) => {
     const userData = new FormData();
@@ -54,6 +50,22 @@ class ProjectApi {
     ongData.append('profileImgUrl', profileImgUrl);
     try {
       const { data } = await this.api.post("/auth-ongs/signup", ongData);
+      return data;
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    }
+  };
+
+  editUser = async ({ username, email, password, contact, profileImgUrl }) => {
+    const userData = new FormData();
+    userData.append('username', username);
+    userData.append('email', email);
+    userData.append('password', password);
+    userData.append('contact', contact);
+    userData.append('profileImgUrl', profileImgUrl);
+
+    try {
+      const { data } = await this.api.put("/auth/:userId/edit", userData);
       return data;
     } catch (error) {
       throw error.response.data || error.message || error;

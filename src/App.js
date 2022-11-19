@@ -11,6 +11,7 @@ import Instructions from './pages/Instructions/Instructions';
 import SignUpOng from './pages/SignUpOng/SignUpOng';
 import SignUpUser from './pages/SignUpUser/SignUpUser';
 import Error from './pages/Error/Error';
+import MyProfile from './pages/MyProfile/MyProfile';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/pets' element={<Pets/>}/>
         <Route path='/ongs' element={<Ongs/>}/>
         <Route path='/instructions' element={<Instructions/>} />
+        <Route path='/my-profile' element={<MyProfile />} />
         <Route path='/*' element={<Error />} />
       </Routes>
       <Footer/>
