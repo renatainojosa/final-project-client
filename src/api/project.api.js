@@ -39,13 +39,14 @@ class ProjectApi {
       const config = {
         headers: { 'content-type': 'multipart/form-data' }
       }
-      const { data } = await this.api.post("/auth/signup", userData, config, {
-        username,
-        email,
-        password,
-        contact,
-        profileImgUrl
-      });
+      const { data } = await this.api.post("/auth/signup", userData, config)
+      // , {
+      //   username,
+      //   email,
+      //   password,
+      //   contact,
+      //   profileImgUrl
+      // });
       return data;
     } catch (error) {
       throw error.response.data || error.message || error;
