@@ -7,6 +7,8 @@ const getToken = () => {
   return localStorage.getItem("token");
 };
 
+
+
 class ProjectApi {
   constructor(baseURL) {
     this.api = axios.create({
@@ -24,9 +26,20 @@ class ProjectApi {
     }
   }
 
+
   signup = async ({ username, email, password, contact, profileImgUrl }) => {
+    const userData = new FormData();
+    userData.append('username', username)
+    userData.append('email', email)
+    userData.append('password', password)
+    userData.append('contact', contact)
+    userData.append('profileImgUrl', profileImgUrl)
+
     try {
-      const { data } = await this.api.post("/auth/signup", {
+      const config = {
+        headers: { 'content-type': 'multipart/form-data' }
+      }
+      const { data } = await this.api.post("/auth/signup", userData, config, {
         username,
         email,
         password,

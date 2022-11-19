@@ -8,8 +8,6 @@ const SignUpUser = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // const meusDados = new FormData();
-  // meusDados.append('campo', valor);
   const onSubmit = async ({
     username,
     email,
@@ -17,12 +15,6 @@ const SignUpUser = () => {
     contact,
     profileImgUrl,
   }) => {
-    const userData = new FormData();
-    userData.append('username', username)
-    userData.append('email', email)
-    userData.append('password', password)
-    userData.append('contact', contact)
-    userData.append('profileImgUrl', profileImgUrl)
     setLoading(true);
     try {
       await api.signup({ username, email, password, contact, profileImgUrl });
