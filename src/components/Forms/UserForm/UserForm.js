@@ -14,7 +14,7 @@ const UserForm = ({loading, onSubmit, submitText}) => {
     };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form enctype="multipart/form-data" className="form-container" onSubmit={handleSubmit}>
     <div className="form-control">
       <label htmlFor="username">Username:</label>
       <input type='text' value={username} onChange={(e) => setUsername(e.target.value)} />
