@@ -23,6 +23,27 @@ class ProjectApi {
     }
   }
 
+  newPet = async ({name, description, category, gender, breed, age, color, castrated, vaccinated, profileImgUrl}) => {
+    const petData = new FormData();
+    petData.append('name', name);
+    petData.append('description', description);
+    petData.append('category', category);
+    petData.append('gender', gender);
+    petData.append('breed', breed);
+    petData.append('age', age);
+    petData.append('color', color);
+    petData.append('castrated', castrated);
+    petData.append('vaccinated', vaccinated);
+    petData.append('profileImgUrl', profileImgUrl);
+
+    try {
+      const { data } = this.api.post("/pets/new-pet", petData);
+      return data;
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    }
+  };
+
   signup = async ({ username, email, password, contact, profileImgUrl }) => {
     const userData = new FormData();
     userData.append('username', username);
