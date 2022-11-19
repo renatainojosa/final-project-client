@@ -27,24 +27,10 @@ class ProjectApi {
   }
 
 
-  signup = async ({ username, email, password, contact, profileImgUrl }) => {
-    const userData = new FormData();
-    userData.append('username', username)
-    userData.append('email', email)
-    userData.append('password', password)
-    userData.append('contact', contact)
-    userData.append('profileImgUrl', profileImgUrl)
-
+  signup = async (formValues) => {
+    
     try {
-      const { data } = await this.api.post("/auth/signup", userData, {
-        headers: { 'content-type': 'multipart/form-data' }
-      }, {
-          username,
-          email,
-          password,
-          contact,
-          profileImgUrl
-        });
+      const { data } = await this.api.post("/auth/signup", formValues);
       return data;
     } catch (error) {
       throw error.response.data || error.message || error;

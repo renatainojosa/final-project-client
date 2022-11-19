@@ -1,5 +1,6 @@
 import './UserForm.css';
 import { useState } from 'react';
+import projectApi from '../../../api/project.api';
 
 const UserForm = ({loading, onSubmit, submitText}) => {
     const [email, setEmail] = useState("");
@@ -8,13 +9,25 @@ const UserForm = ({loading, onSubmit, submitText}) => {
     const [contact, setContact] = useState("");
     const [profileImgUrl, setProfileImgUrl] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        onSubmit({ username, email, password, contact, profileImgUrl });
+        const userData = new FormData();
+        try {
+          userData.append('username', username);
+          userData.append('email', email);
+          userData.append('password', password);
+          userData.append('contact', contact);
+          userData.append('profileImgUrl', profileImgUrl);
+          const response =  await projectApi.signup(userData);
+          return response;
+        } catch (error) {
+          console.log(error)
+        }
+        // onSubmit({ username, email, password, contact, profileImgUrl });
     };
 
   return (
-    <form enctype="multipart/form-data" action="/signup/user" method="post" className="form-container" onSubmit={handleSubmit}>
+    <form className="form-container" onSubmit={handleSubmit}>
     <div className="form-control">
       <label htmlFor="username">Username:</label>
       <input type='text' value={username} onChange={(e) => setUsername(e.target.value)} />
@@ -33,7 +46,7 @@ const UserForm = ({loading, onSubmit, submitText}) => {
     </div>
     <div className="form-control">
       <label htmlFor="profileImgUrl">Profile Image:</label>
-      <input type='file' value={profileImgUrl} onChange={(e) => setProfileImgUrl(e.target.value)} />
+      <input type='file' value={profileImgUrl} onChange={(e) => setProfileImgUrl(e.target.files)} />
     </div>
     {loading ? 'Loading...' : <button>{submitText}</button>}
   </form>
