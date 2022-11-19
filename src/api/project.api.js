@@ -101,11 +101,22 @@ class ProjectApi {
       throw error.response.data || error.message || error;
     }
   };
+  
+  loginOng = async ({ email, password }) => {
+    try {
+      const { data } = await this.api.post("/auth-ongs/login", { email, password });
+      storeToken(data.token);
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    }
+  };
+
+  
 
   verify = async () => {
     const token = getToken(); 
     try {
-      const { data } = this.api.get("/auth/verify", {
+      const { data } = await this.api.get("/auth/verify", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -119,7 +130,7 @@ class ProjectApi {
   verifyOng = async () => {
     const token = getToken(); 
     try {
-      const { data } = this.api.get("/auth-ongs/verify", {
+      const { data } = await this.api.get("/auth-ongs/verify", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

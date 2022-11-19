@@ -24,11 +24,25 @@ const Login = () => {
       setLoading(false);
     }
   };
+  const onSubmitOng = async ({ email, password }) => {
+    setLoading(true);
+    try {
+      await api.loginOng({ email, password });
+      authenticateUser();
+      navigate("/");
+    } catch (error) {
+      throw error.response.data || error.message || error;
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="login-container">
       <h2 className="title">Login</h2>
       <LoginForm onSubmit={onSubmit} submitText="Login" loading={loading} />
+      <h2 className="title">Login Ong</h2>
+      <LoginForm onSubmit={onSubmitOng} submitText="Login Ong" loading={loading} />
     </div>
   );
 };
