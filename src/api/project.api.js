@@ -54,6 +54,17 @@ class ProjectApi {
     }
   };
 
+  getOneOng = async () => {
+    try {
+      const { data } = await this.api.get('/auth-ongs/ong')
+      return data;
+    } catch (error) {
+      throw (error.response && error.response.data) || error.message || error;
+    }
+  };
+
+
+
   signup = async ({ username, email, password, contact, profileImgUrl }) => {
     const userData = new FormData();
     userData.append('username', username);
@@ -87,16 +98,32 @@ class ProjectApi {
     }
   };
 
-  editUser = async ({ username, email, password, contact, profileImgUrl }) => {
+  editUser = async ({ username, email, contact, profileImgUrl }) => {
     const userData = new FormData();
     userData.append('username', username);
     userData.append('email', email);
-    userData.append('password', password);
     userData.append('contact', contact);
     userData.append('profileImgUrl', profileImgUrl);
 
     try {
       const { data } = await this.api.put(`/auth/edit`, userData);
+      return data;
+    } catch (error) {
+      throw (error.response && error.response.data) || error.message || error;
+    }
+  };
+
+  editOng = async ({ username, email, contact, identification, profileImgUrl, acceptDonation }) => {
+    const ongData = new FormData();
+    ongData.append('username', username);
+    ongData.append('email', email);
+    ongData.append('contact', contact);
+    ongData.append('identification', identification);
+    ongData.append('acceptDonation', acceptDonation);
+    ongData.append('profileImgUrl', profileImgUrl);
+
+    try {
+      const { data } = await this.api.put('/auth-ongs/edit', ongData);
       return data;
     } catch (error) {
       throw (error.response && error.response.data) || error.message || error;
