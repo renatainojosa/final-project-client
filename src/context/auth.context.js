@@ -8,8 +8,8 @@ const AuthContext = createContext();
 const AuthProviderWrapper = ({children}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState({});
-  const [ong, setOng] = useState({});
+  const [user, setUser] = useState('');
+  const [ong, setOng] = useState('');
   const navigate = useNavigate();
 
 
@@ -25,9 +25,13 @@ const AuthProviderWrapper = ({children}) => {
       // const responseOng = await api.verifyOng(storedToken);
       
       console.log(response.type)
+      setUser(response.type);
+      setOng(response.type);
+      console.log(user)
+      console.log(ong)
       setIsLoggedIn(true);
-      setUser(response);
-      setOng(response);
+      // setOng(response.type);
+      // 
       // if (response.type === 'Ong') {
       //   setOng(response)
       // } else {

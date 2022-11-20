@@ -22,7 +22,7 @@ const MyProfile = () => {
       window.alert("Profile updated!");
       navigate("/my-profile");
     } catch (error) {
-      throw error.response.data || error.message || error;
+      throw (error.response && error.response.data) || error.message || error;
     } finally {
       setLoading(false);
     }

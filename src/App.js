@@ -15,6 +15,7 @@ import MyProfile from './pages/MyProfile/MyProfile';
 import MyPets from './pages/MyPets/MyPets';
 import NewPet from './pages/NewPet/NewPet';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MyProfileOng from './pages/MyProfileOng/MyProfileOng';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/ongs' element={<Ongs/>}/>
         <Route path='/instructions' element={<Instructions/>} />
         <Route path='/my-profile' element={<PrivateRoute><MyProfile /></PrivateRoute>} />
+        <Route path='/my-profile-ong' element={<PrivateRoute><MyProfileOng /></PrivateRoute>} />
         <Route path='/my-profile/my-pets' element ={<PrivateRoute><MyPets /></PrivateRoute>} />
         <Route path='/my-profile/new-pet' element ={<PrivateRoute><NewPet /></PrivateRoute>} />
         <Route path='/*' element={<Error />} />
