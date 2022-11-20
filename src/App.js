@@ -19,7 +19,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path='/' element={<HomePage/>}/>
         <Route path='/signup' element={<SignUp/>}/>
