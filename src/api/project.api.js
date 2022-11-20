@@ -36,8 +36,14 @@ class ProjectApi {
     petData.append('vaccinated', vaccinated);
     petData.append('profileImgUrl', profileImgUrl);
 
+    const token = getToken();
+
     try {
-      const { data } = this.api.post("/pets/new-pet", petData);
+      const { data } = await this.api.post("/pets/new-pet", petData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       return data;
     } catch (error) {
       throw error.response.data || error.message || error;
