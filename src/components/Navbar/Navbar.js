@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/auth.context";
 import logoImg from "../../images/pets2-removebg-preview.png";
 
 const Navbar = () => {
-  const { isLoggedIn, logoutUser } = useContext(AuthContext);
+  const { isLoggedIn, logoutUser, userOrOng } = useContext(AuthContext);
 
   return (
     <nav className="navbar bg-light">
