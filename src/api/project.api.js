@@ -1,17 +1,18 @@
 import axios from "axios";
-import { storeToken } from "../utils/token.utils";
+import { storeToken, getToken } from "../utils/token.utils";
 
 const baseURL = process.env.REACT_APP_API_URI || "http://localhost:5000"
-
-const getToken = () => {
-  return localStorage.getItem("token");
-};
 
 class ProjectApi {
   constructor(baseURL) {
     this.api = axios.create({
       baseURL
     });
+    this.api.interceptors.request.use((req) => {
+      const token = getToken();
+      if (token) req.headers = { Authorization: `Bearer ${token}`}
+      return req;
+    })
   }
   
   getPets = async () => {
@@ -19,7 +20,7 @@ class ProjectApi {
       const { data } = await this.api.get('/pets')
       return data;
     } catch (error) {
-      throw error;
+      throw (error.response && error.response.data) || error.message || error;
     }
   }
 
@@ -36,17 +37,20 @@ class ProjectApi {
     petData.append('vaccinated', vaccinated);
     petData.append('profileImgUrl', profileImgUrl);
 
-    const token = getToken();
-
     try {
-      const { data } = await this.api.post("/pets/new-pet", petData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const { data } = await this.api.post("/pets/new-pet", petData);
       return data;
     } catch (error) {
-      throw error.response.data || error.message || error;
+      throw (error.response && error.response.data) || error.message || error;
+    }
+  };
+
+  getOneUser = async () => {
+    try {
+      const { data } = await this.api.get('/auth/user')
+      return data;
+    } catch (error) {
+      throw (error.response && error.response.data) || error.message || error;
     }
   };
 
@@ -62,7 +66,7 @@ class ProjectApi {
       const { data } = await this.api.post("/auth/signup", userData);
       return data;
     } catch (error) {
-      throw error.response.data || error.message || error;
+      throw (error.response && error.response.data) || error.message || error;
     }
   };
 
@@ -79,7 +83,7 @@ class ProjectApi {
       const { data } = await this.api.post("/auth-ongs/signup", ongData);
       return data;
     } catch (error) {
-      throw error.response.data || error.message || error;
+      throw (error.response && error.response.data) || error.message || error;
     }
   };
 
@@ -92,10 +96,10 @@ class ProjectApi {
     userData.append('profileImgUrl', profileImgUrl);
 
     try {
-      const { data } = await this.api.put("/auth/:userId/edit", userData);
+      const { data } = await this.api.put(`/auth/edit`, userData);
       return data;
     } catch (error) {
-      throw error.response.data || error.message || error;
+      throw (error.response && error.response.data) || error.message || error;
     }
   };
 
@@ -104,7 +108,7 @@ class ProjectApi {
       const { data } = await this.api.post("/auth/login", { email, password });
       storeToken(data.token);
     } catch (error) {
-      throw error.response.data || error.message || error;
+      throw (error.response && error.response.data) || error.message || error;
     }
   };
   
@@ -113,37 +117,25 @@ class ProjectApi {
       const { data } = await this.api.post("/auth-ongs/login", { email, password });
       storeToken(data.token);
     } catch (error) {
-      throw error.response.data || error.message || error;
+      throw (error.response && error.response.data) || error.message || error;
     }
   };
 
-  
-
   verify = async () => {
-    const token = getToken(); 
     try {
-      const { data } = await this.api.get("/auth/verify", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const { data } = await this.api.get("/auth/verify");
       return data;
     } catch (error) {
-      throw error.response.data || error.message || error;
+      throw (error.response && error.response.data) || error.message || error;
     }
   };
 
   verifyOng = async () => {
-    const token = getToken(); 
     try {
-      const { data } = await this.api.get("/auth-ongs/verify", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const { data } = await this.api.get("/auth-ongs/verify");
       return data;
     } catch (error) {
-      throw error.response.data || error.message || error;
+      throw (error.response && error.response.data) || error.message || error;
     }
   };
 }
