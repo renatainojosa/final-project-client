@@ -49,29 +49,38 @@ const PetForm = ({ loading, onSubmit, submitText }) => {
       </div>
       <div className="form-control">
         <label htmlFor="category">Category:</label>
-        <select
-          value={category}
+        <input
+          type="radio"
+          name="category"
+          id="dog"
+          value='dog'
           onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value='dog'>Dog</option>
-          <option value='cat'>Cat</option>
-        </select>
+        />
+        <label htmlFor="dog">Dog</label>
+        <input
+          type="radio"
+          name="category"
+          id="cat"
+          value='cat'
+          onChange={(e) => setCategory(e.target.value)}
+        />
+        <label htmlFor="cat">Cat</label>
       </div>
       <div className="form-control">
         <label htmlFor="gender">Gender:</label>
         <input
-          type="checkbox"
-          name="male"
+          type="radio"
+          name="gender"
           id="male"
-          value={gender}
+          value='male'
           onChange={(e) => setGender(e.target.value)}
         />
         <label htmlFor="male">Male</label>
         <input
-          type="checkbox"
-          name="female"
+          type="radio"
+          name="gender"
           id="female"
-          value={gender}
+          value='female'
           onChange={(e) => setGender(e.target.value)}
         />
         <label htmlFor="female">Female</label>
@@ -95,7 +104,7 @@ const PetForm = ({ loading, onSubmit, submitText }) => {
       <div className="form-control">
         <label htmlFor="color">Color:</label>
         <input
-          type="color"
+          type="text"
           value={color}
           onChange={(e) => setColor(e.target.value)}
         />
@@ -103,40 +112,40 @@ const PetForm = ({ loading, onSubmit, submitText }) => {
       <div className="form-control">
         <label htmlFor="castrated">Castrated:</label>
         <input
-          type="checkbox"
-          name="yes"
-          id="yes"
+          type="radio"
+          name="castrated"
+          id="isCastrated"
           value={true}
           onChange={(e) => setCastrated(e.target.value)}
         />
-        <label htmlFor="yes">Yes</label>
+        <label htmlFor="isCastrated">Yes</label>
         <input
-          type="checkbox"
-          name="no"
-          id="no"
+          type="radio"
+          name="castrated"
+          id="isNotCastrated"
           value={false}
           onChange={(e) => setCastrated(e.target.value)}
         />
-        <label htmlFor="no">No</label>
+        <label htmlFor="isNotCastrated">No</label>
       </div>
       <div className="form-control">
         <label htmlFor="vaccinated">Vaccinated:</label>
         <input
-          type="checkbox"
-          name="yes"
-          id="yes"
+          type="radio"
+          name="vaccinated"
+          id="isVaccinated"
           value={true}
           onChange={(e) => setVaccinated(e.target.value)}
         />
-        <label htmlFor="yes">Yes</label>
+        <label htmlFor="isVaccinated">Yes</label>
         <input
-          type="checkbox"
-          name="no"
-          id="no"
+          type="radio"
+          name="vaccinated"
+          id="isNotVaccinated"
           value={false}
           onChange={(e) => setVaccinated(e.target.value)}
         />
-        <label htmlFor="no">No</label>
+        <label htmlFor="isNotVaccinated">No</label>
       </div>
       <div className="form-control">
         <label htmlFor="profileImgUrl">Profile Image:</label>
