@@ -32,11 +32,13 @@ class ProjectApi {
       throw (error.response && error.response.data) || error.message || error;
     }
   }
-  getOnePet = async () => {
+  getOnePet = async (petId) => {
+    console.log('testee')
     try {
-      const { data } = await this.api.get('/pets/:petId')
+      const { data } = await this.api.get(`/pets/${petId}`)
       return data;
     } catch (error) {
+      console.log('caiu no erro');
       throw (error.response && error.response.data) || error.message || error;
     }
   }
@@ -76,7 +78,7 @@ class ProjectApi {
     petData.append('profileImgUrl', profileImgUrl);
 
     try {
-      const { data } = await this.api.put(`/pets/${petId}/edit`, petData);
+      const { data } = await this.api.put(`/pets/${petId}`, petData);
       return data;
     } catch (error) {
       throw (error.response && error.response.data) || error.message || error;

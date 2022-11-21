@@ -8,6 +8,7 @@ const EditPet = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const {petId} = useParams();
+    console.log(useParams());
 
     const onSubmit = async ({
         name,
