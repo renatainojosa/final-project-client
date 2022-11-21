@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import api from "../../src/api/project.api";
-import { storeToken, removeToken } from "../utils/token.utils";
+import { storeToken, removeToken, getToken } from "../utils/token.utils";
 import { useNavigate } from "react-router-dom"; 
 
 const AuthContext = createContext();
@@ -12,15 +12,16 @@ const AuthProviderWrapper = ({children}) => {
   const [ong, setOng] = useState('');
   const navigate = useNavigate();
 
+  const storedToken = getToken();
 
   const authenticateUser = async () => {
-    const storedToken = localStorage.getItem("token");
     try {
       if (!storedToken) {
         setIsLoggedIn(false);
         throw new Error();
       }
-      const response = await Promise.any([api.verify(storedToken), api.verifyOng(storedToken)])
+      const promises = [api.verify(storedToken), api.verifyOng(storedToken)]
+      const response = await Promise.any(promises)
       // const responseUser = await api.verify(storedToken);
       // const responseOng = await api.verifyOng(storedToken);
       
