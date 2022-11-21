@@ -24,6 +24,23 @@ class ProjectApi {
     }
   }
 
+  getUserPets = async () => {
+    try {
+      const { data } = await this.api.get('/pets/user-pets')
+      return data;
+    } catch (error) {
+      throw (error.response && error.response.data) || error.message || error;
+    }
+  }
+  getOnePet = async () => {
+    try {
+      const { data } = await this.api.get('/pets/:petId')
+      return data;
+    } catch (error) {
+      throw (error.response && error.response.data) || error.message || error;
+    }
+  }
+
   newPet = async ({name, description, category, gender, breed, age, color, castrated, vaccinated, profileImgUrl}) => {
     const petData = new FormData();
     petData.append('name', name);
@@ -39,6 +56,27 @@ class ProjectApi {
 
     try {
       const { data } = await this.api.post("/pets/new-pet", petData);
+      return data;
+    } catch (error) {
+      throw (error.response && error.response.data) || error.message || error;
+    }
+  };
+
+  editPet = async (petId, { name, description, category, gender, breed, age, color, castrated, vaccinated, profileImgUrl }) => {
+    const petData = new FormData();
+    petData.append('name', name);
+    petData.append('description', description);
+    petData.append('category', category);
+    petData.append('gender', gender);
+    petData.append('breed', breed);
+    petData.append('age', age);
+    petData.append('color', color);
+    petData.append('castrated', castrated);
+    petData.append('vaccinated', vaccinated);
+    petData.append('profileImgUrl', profileImgUrl);
+
+    try {
+      const { data } = await this.api.put(`/pets/${petId}/edit`, petData);
       return data;
     } catch (error) {
       throw (error.response && error.response.data) || error.message || error;
