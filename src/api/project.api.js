@@ -36,6 +36,7 @@ class ProjectApi {
     console.log('testee')
     try {
       const { data } = await this.api.get(`/pets/${petId}`)
+      console.log(data)
       return data;
     } catch (error) {
       console.log('caiu no erro');
