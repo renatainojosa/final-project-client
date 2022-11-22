@@ -12,16 +12,15 @@ const AuthProviderWrapper = ({children}) => {
   const [ong, setOng] = useState('');
   const navigate = useNavigate();
 
-  const storedToken = getToken();
 
   const authenticateUser = async () => {
+  const storedToken = getToken();
     try {
       if (!storedToken) {
         setIsLoggedIn(false);
         throw new Error();
       }
-      const promises = [api.verify(storedToken), api.verifyOng(storedToken)]
-      const response = await Promise.any(promises)
+      const response = await Promise.any([api.verify(storedToken), api.verifyOng(storedToken)])
       // const responseUser = await api.verify(storedToken);
       // const responseOng = await api.verifyOng(storedToken);
       
