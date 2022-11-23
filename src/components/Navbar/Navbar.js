@@ -70,7 +70,7 @@ const Navbar = () => {
                   Hello, {userOrOng.name}!
                 </Link>
               </li>
-              <ul className="dropdown-menu">
+              {/* <ul className="dropdown-menu">
                 <li>
                   <Link to="/my-profile" className="dropdown-item">
                     My Profile
@@ -94,7 +94,7 @@ const Navbar = () => {
                     Something else here
                   </Link>
                 </li>
-              </ul>
+              </ul> */}
             </>
           )}
         </ul>

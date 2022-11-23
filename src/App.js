@@ -29,7 +29,7 @@ function App() {
         <Route path='/signup/ong' element={<SignUpOng/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/pets' element={<PrivateRoute><Pets/></PrivateRoute>}/>
-        <Route path='/ongs' element={<Ongs/>}/>
+        <Route path='/ongs' element={<PrivateRoute><Ongs/></PrivateRoute>}/>
         <Route path='/instructions' element={<Instructions/>} />
         <Route path='/my-profile' element={<PrivateRoute><MyProfile /></PrivateRoute>} />
         <Route path='/my-profile-ong' element={<PrivateRoute><MyProfileOng /></PrivateRoute>} />
