@@ -12,7 +12,6 @@ const AuthProviderWrapper = ({children}) => {
   const [ong, setOng] = useState('');
   const navigate = useNavigate();
 
-
   const authenticateUser = async () => {
   const storedToken = getToken();
     try {
@@ -21,8 +20,6 @@ const AuthProviderWrapper = ({children}) => {
         throw new Error();
       }
       const response = await Promise.any([api.verify(storedToken), api.verifyOng(storedToken)])
-      // const responseUser = await api.verify(storedToken);
-      // const responseOng = await api.verifyOng(storedToken);
       
       console.log(response.type)
       setUser(response.type);
@@ -30,22 +27,10 @@ const AuthProviderWrapper = ({children}) => {
       console.log(user)
       console.log(ong)
       setIsLoggedIn(true);
-      // setOng(response.type);
-      // 
-      // if (response.type === 'Ong') {
-      //   setOng(response)
-      // } else {
-      //   setUser(response);
-      //   console.log(user)
-      // }
-      
-      
-      // setIsLoggedIn(true);
-      // responseUser.type = 
-      // setUserOrOng(response);
-      // setOng(!!response.identification)
+
     } catch (error) {
       setIsLoggedIn(false);
+      console.log(error)
       setUser(null);
       setOng(null);
     } finally {

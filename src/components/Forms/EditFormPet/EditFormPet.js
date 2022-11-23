@@ -8,10 +8,10 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
   const [category, setCategory] = useState("");
   const [gender, setGender] = useState("");
   const [breed, setBreed] = useState("");
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState("");
   const [color, setColor] = useState("");
-  const [castrated, setCastrated] = useState(false);
-  const [vaccinated, setVaccinated] = useState(false);
+  const [castrated, setCastrated] = useState("");
+  const [vaccinated, setVaccinated] = useState("");
   const [profileImgUrl, setProfileImgUrl] = useState("");
   const {petId} = useParams()
 
@@ -76,8 +76,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="category"
           id="dog"
-          value='dog'
-          checked={category}
+          value={category}
           onChange={(e) => setCategory(e.target.value)}
         />
         <label htmlFor="dog">Dog</label>
@@ -85,8 +84,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="category"
           id="cat"
-          value='cat'
-          checked={category}
+          value={category}
           onChange={(e) => setCategory(e.target.value)}
         />
         <label htmlFor="cat">Cat</label>
@@ -98,7 +96,6 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           name="gender"
           id="male"
           value={gender}
-          // checked={gender}
           onChange={(e) => setGender(e.target.value)}
         />
         <label htmlFor="male">Male</label>
@@ -107,7 +104,6 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           name="gender"
           id="female"
           value={gender}
-          // checked={gender}
           onChange={(e) => setGender(e.target.value)}
         />
         <label htmlFor="female">Female</label>
@@ -123,7 +119,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
       <div className="form-control">
         <label htmlFor="age">Age:</label>
         <input
-          type="number"
+          type="text"
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
@@ -143,7 +139,6 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           name="castrated"
           id="isCastrated"
           value={castrated}
-          // checked={castrated}
           onChange={(e) => setCastrated(e.target.value)}
         />
         <label htmlFor="isCastrated">Yes</label>
@@ -152,7 +147,6 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           name="castrated"
           id="isNotCastrated"
           value={castrated}
-          // checked={castrated}
           onChange={(e) => setCastrated(e.target.value)}
         />
         <label htmlFor="isNotCastrated">No</label>
@@ -163,8 +157,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="vaccinated"
           id="isVaccinated"
-          value={true}
-          checked={vaccinated}
+          value={vaccinated}
           onChange={(e) => setVaccinated(e.target.value)}
         />
         <label htmlFor="isVaccinated">Yes</label>
@@ -172,8 +165,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="vaccinated"
           id="isNotVaccinated"
-          value={false}
-          checked={vaccinated}
+          value={vaccinated}
           onChange={(e) => setVaccinated(e.target.value)}
         />
         <label htmlFor="isNotVaccinated">No</label>

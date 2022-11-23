@@ -53,4 +53,4 @@ const EditPet = () => {
   )
 }
 
-export default EditPet
+export default EditPet;
