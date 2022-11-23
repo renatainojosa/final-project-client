@@ -26,7 +26,7 @@ const Ongs = () => {
             <div className="card-body">
               <h5 className="card-title">{ong.name}</h5>
               <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <Link to='/ong-details' className="btn btn-primary">ONG Details</Link>
+              <Link to='/ongs/ong-details' className="btn btn-primary">ONG Details</Link>
             </div>
           </div>
         )
