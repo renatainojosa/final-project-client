@@ -1,10 +1,12 @@
 import "./NewPet.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../api/project.api";
 import PetForm from "../../components/Forms/PetForm/PetForm";
+import { AuthContext } from "../../context/auth.context";
 
 const NewPet = () => {
+  const {userOrOng} = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -34,10 +36,11 @@ const NewPet = () => {
         vaccinated,
         profileImgUrl,
       });
-      navigate("/my-profile/my-pets");
+      userOrOng.type === "User"
+        ? navigate("/my-profile/my-pets")
+        : navigate("/my-profile-ong/my-pets");
     } catch (error) {
-      // throw error.response.data || error.message || error;
-      console.log("erro:", error);
+      throw (error.response && error.response.data) || error.message || error;
     } finally {
       setLoading(false);
     }

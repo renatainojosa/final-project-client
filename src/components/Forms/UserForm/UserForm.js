@@ -4,17 +4,26 @@ import { useState } from "react";
 const UserForm = ({ loading, onSubmit, submitText }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [contact, setContact] = useState("");
   const [profileImgUrl, setProfileImgUrl] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ email, password, username, contact, profileImgUrl });
+    onSubmit({ name, email, password, username, contact, profileImgUrl });
   };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
+      <div className="form-control">
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
       <div className="form-control">
         <label htmlFor="username">Username:</label>
         <input

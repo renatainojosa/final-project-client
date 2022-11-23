@@ -33,6 +33,9 @@ function App() {
         <Route path='/instructions' element={<Instructions/>} />
         <Route path='/my-profile' element={<PrivateRoute><MyProfile /></PrivateRoute>} />
         <Route path='/my-profile-ong' element={<PrivateRoute><MyProfileOng /></PrivateRoute>} />
+        <Route path='/my-profile-ong/my-pets' element={<PrivateRoute><MyPets /></PrivateRoute>} />
+        <Route path='/my-profile-ong/my-pets/:petId/edit' element={<PrivateRoute><EditPet /></PrivateRoute>} />
+        <Route path='/my-profile-ong/new-pet' element={<PrivateRoute><NewPet /></PrivateRoute>} />
         <Route path='/my-profile/my-pets' element ={<PrivateRoute><MyPets /></PrivateRoute>} />
         <Route path='/my-profile/my-pets/:petId/edit' element ={<PrivateRoute><EditPet /></PrivateRoute>} />
         <Route path='/my-profile/new-pet' element ={<PrivateRoute><NewPet /></PrivateRoute>} />

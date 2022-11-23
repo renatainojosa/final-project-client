@@ -9,6 +9,7 @@ const SignUpOng = () => {
   const navigate = useNavigate();
 
   const onSubmit = async ({
+    name, 
     username,
     email,
     password,
@@ -20,6 +21,7 @@ const SignUpOng = () => {
     setLoading(true);
     try {
       await api.signupOng({
+        name,
         username,
         email,
         password,

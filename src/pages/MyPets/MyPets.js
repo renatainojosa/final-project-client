@@ -7,18 +7,36 @@ const MyPets = () => {
     const [myPets, setMyPets] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
 
+    const getPets = () => {
+      api
+      .getUserPets()
+      .then((result) => {
+        setMyPets(result)
+        setIsLoading(false)
+      })
+      .catch((error) => {
+        throw (error.response && error.response.data) || error.message || error;
+      })
+    }
+
     useEffect(() => {
       setIsLoading(true)
-      api
-        .getUserPets()
-        .then((result) => {
-          setMyPets(result)
-          setIsLoading(false)
-        })
-        .catch((error) => {
-          throw (error.response && error.response.data) || error.message || error;
-        })
+      getPets();
     }, [])
+
+    const removePet = async (petId) => {
+      try {
+        setIsLoading(true)
+        await api.removePet(petId)
+        window.alert("Pet deleted!");
+        getPets();
+      } catch (error) {
+        throw (error.response && error.response.data) || error.message || error;
+      } finally {
+        setIsLoading(false)
+      }
+    };
+
   return (
     <>
       <h2>My Pets</h2>
@@ -38,7 +56,7 @@ const MyPets = () => {
                 <h5 className="card-title">{pet.name}</h5>
                 <p className="card-text">{pet.description}</p>
                 <Link to={`/my-profile/my-pets/${pet._id}/edit`} className="btn btn-primary">Edit Pet</Link>
-                <Link to={`/my-profile/my-pets/${pet._id}/edit`} className="btn btn-primary">Remove Pet</Link>
+                <button className="btn btn-primary" onClick={() => removePet(pet._id)}>Remove Pet</button>
                 {isLoading && 'Loading...'}
               </div>
           </div>

@@ -3,6 +3,7 @@ import api from "../../../api/project.api";
 
 const EditForm = ({ loading, onSubmit, submitText }) => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [contact, setContact] = useState("");
   const [profileImgUrl, setProfileImgUrl] = useState("");
@@ -11,6 +12,7 @@ const EditForm = ({ loading, onSubmit, submitText }) => {
     api
       .getOneUser()
       .then((response) => {
+        setName(response.name);
         setEmail(response.email);
         setUsername(response.username);
         setContact(response.contact);
@@ -23,11 +25,19 @@ const EditForm = ({ loading, onSubmit, submitText }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ email, username, contact, profileImgUrl });
+    onSubmit({ name, email, username, contact, profileImgUrl });
   };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
+      <div className="form-control">
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
       <div className="form-control">
         <label htmlFor="username">Username:</label>
         <input

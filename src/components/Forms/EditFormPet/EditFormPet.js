@@ -8,10 +8,10 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
   const [category, setCategory] = useState("");
   const [gender, setGender] = useState("");
   const [breed, setBreed] = useState("");
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState("");
   const [color, setColor] = useState("");
-  const [castrated, setCastrated] = useState(false);
-  const [vaccinated, setVaccinated] = useState(false);
+  const [castrated, setCastrated] = useState("");
+  const [vaccinated, setVaccinated] = useState("");
   const [profileImgUrl, setProfileImgUrl] = useState("");
   const {petId} = useParams()
 
@@ -19,7 +19,6 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
     api
       .getOnePet(petId)
       .then((response) => {
-        console.log(response)
         setName(response.name);
         setDescription(response.description);
         setCategory(response.category);
@@ -76,8 +75,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="category"
           id="dog"
-          value='dog'
-          checked={category}
+          value="dog"
+          checked={category === "dog"}
           onChange={(e) => setCategory(e.target.value)}
         />
         <label htmlFor="dog">Dog</label>
@@ -85,8 +84,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="category"
           id="cat"
-          value='cat'
-          checked={category}
+          value="cat"
+          checked={category === "cat"}
           onChange={(e) => setCategory(e.target.value)}
         />
         <label htmlFor="cat">Cat</label>
@@ -97,8 +96,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="gender"
           id="male"
-          value='male'
-          checked={gender}
+          value="male"
+          checked={gender === "male"}
           onChange={(e) => setGender(e.target.value)}
         />
         <label htmlFor="male">Male</label>
@@ -106,8 +105,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="gender"
           id="female"
-          value='female'
-          checked={gender}
+          value="female"
+          checked={gender === "female"}
           onChange={(e) => setGender(e.target.value)}
         />
         <label htmlFor="female">Female</label>
@@ -123,7 +122,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
       <div className="form-control">
         <label htmlFor="age">Age:</label>
         <input
-          type="number"
+          type="text"
           value={age}
           onChange={(e) => setAge(e.target.value)}
         />
@@ -142,8 +141,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="castrated"
           id="isCastrated"
-          value={true}
-          checked={castrated}
+          value="Yes"
+          checked={castrated === "Yes"}
           onChange={(e) => setCastrated(e.target.value)}
         />
         <label htmlFor="isCastrated">Yes</label>
@@ -151,8 +150,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="castrated"
           id="isNotCastrated"
-          value={false}
-          checked={castrated}
+          value="No"
+          checked={castrated === "No"}
           onChange={(e) => setCastrated(e.target.value)}
         />
         <label htmlFor="isNotCastrated">No</label>
@@ -163,8 +162,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="vaccinated"
           id="isVaccinated"
-          value={true}
-          checked={vaccinated}
+          value="Yes"
+          checked={vaccinated === "Yes"}
           onChange={(e) => setVaccinated(e.target.value)}
         />
         <label htmlFor="isVaccinated">Yes</label>
@@ -172,8 +171,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="vaccinated"
           id="isNotVaccinated"
-          value={false}
-          checked={vaccinated}
+          value="No"
+          checked={vaccinated === "No"}
           onChange={(e) => setVaccinated(e.target.value)}
         />
         <label htmlFor="isNotVaccinated">No</label>

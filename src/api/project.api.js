@@ -33,13 +33,10 @@ class ProjectApi {
     }
   }
   getOnePet = async (petId) => {
-    console.log('testee')
     try {
       const { data } = await this.api.get(`/pets/${petId}`)
-      console.log(data)
       return data;
     } catch (error) {
-      console.log('caiu no erro');
       throw (error.response && error.response.data) || error.message || error;
     }
   }
@@ -86,6 +83,15 @@ class ProjectApi {
     }
   };
 
+  removePet = async (petId) => {
+    try {
+      const { data } = await this.api.delete(`/pets/${petId}`)
+      return data;
+    } catch (error) {
+      throw (error.response && error.response.data) || error.message || error;
+    }
+  };
+
   getOneUser = async () => {
     try {
       const { data } = await this.api.get('/auth/user')
@@ -106,8 +112,9 @@ class ProjectApi {
 
 
 
-  signup = async ({ username, email, password, contact, profileImgUrl }) => {
+  signup = async ({ name, username, email, password, contact, profileImgUrl }) => {
     const userData = new FormData();
+    userData.append('name', name);
     userData.append('username', username);
     userData.append('email', email);
     userData.append('password', password);
@@ -122,8 +129,9 @@ class ProjectApi {
     }
   };
 
-  signupOng = async ({ username, email, password, contact, identification, profileImgUrl, acceptDonation }) => {
+  signupOng = async ({ name, username, email, password, contact, identification, profileImgUrl, acceptDonation }) => {
     const ongData = new FormData();
+    ongData.append('name', name);
     ongData.append('username', username);
     ongData.append('email', email);
     ongData.append('password', password);
@@ -139,8 +147,9 @@ class ProjectApi {
     }
   };
 
-  editUser = async ({ username, email, contact, profileImgUrl }) => {
+  editUser = async ({ name, username, email, contact, profileImgUrl }) => {
     const userData = new FormData();
+    userData.append('name', name);
     userData.append('username', username);
     userData.append('email', email);
     userData.append('contact', contact);
@@ -154,8 +163,9 @@ class ProjectApi {
     }
   };
 
-  editOng = async ({ username, email, contact, identification, profileImgUrl, acceptDonation }) => {
+  editOng = async ({ name, username, email, contact, identification, profileImgUrl, acceptDonation }) => {
     const ongData = new FormData();
+    ongData.append('name', name);
     ongData.append('username', username);
     ongData.append('email', email);
     ongData.append('contact', contact);

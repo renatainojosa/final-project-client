@@ -3,6 +3,7 @@ import api from "../../../api/project.api";
 
 const EditFormOng = ({ loading, onSubmit, submitText }) => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [contact, setContact] = useState("");
   const [identification, setIdentification] = useState("");
@@ -13,6 +14,7 @@ const EditFormOng = ({ loading, onSubmit, submitText }) => {
     api
       .getOneOng()
       .then((response) => {
+        setName(response.name);
         setEmail(response.email);
         setUsername(response.username);
         setContact(response.contact);
@@ -27,13 +29,21 @@ const EditFormOng = ({ loading, onSubmit, submitText }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ email, username, contact, identification, acceptDonation, profileImgUrl });
+    onSubmit({ name, email, username, contact, identification, acceptDonation, profileImgUrl });
   };
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
       <div className="form-control">
-        <label htmlFor="username">ONG name:</label>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div className="form-control">
+        <label htmlFor="username">Username:</label>
         <input
           type="text"
           value={username}
