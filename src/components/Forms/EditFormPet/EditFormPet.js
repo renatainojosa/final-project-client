@@ -19,7 +19,6 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
     api
       .getOnePet(petId)
       .then((response) => {
-        console.log(response)
         setName(response.name);
         setDescription(response.description);
         setCategory(response.category);
@@ -76,7 +75,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="category"
           id="dog"
-          value={category}
+          value="dog"
+          checked={category === "dog"}
           onChange={(e) => setCategory(e.target.value)}
         />
         <label htmlFor="dog">Dog</label>
@@ -84,7 +84,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="category"
           id="cat"
-          value={category}
+          value="cat"
+          checked={category === "cat"}
           onChange={(e) => setCategory(e.target.value)}
         />
         <label htmlFor="cat">Cat</label>
@@ -95,7 +96,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="gender"
           id="male"
-          value={gender}
+          value="male"
+          checked={gender === "male"}
           onChange={(e) => setGender(e.target.value)}
         />
         <label htmlFor="male">Male</label>
@@ -103,7 +105,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="gender"
           id="female"
-          value={gender}
+          value="female"
+          checked={gender === "female"}
           onChange={(e) => setGender(e.target.value)}
         />
         <label htmlFor="female">Female</label>
@@ -138,7 +141,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="castrated"
           id="isCastrated"
-          value={castrated}
+          value="Yes"
+          checked={castrated === "Yes"}
           onChange={(e) => setCastrated(e.target.value)}
         />
         <label htmlFor="isCastrated">Yes</label>
@@ -146,7 +150,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="castrated"
           id="isNotCastrated"
-          value={castrated}
+          value="No"
+          checked={castrated === "No"}
           onChange={(e) => setCastrated(e.target.value)}
         />
         <label htmlFor="isNotCastrated">No</label>
@@ -157,7 +162,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="vaccinated"
           id="isVaccinated"
-          value={vaccinated}
+          value="Yes"
+          checked={vaccinated === "Yes"}
           onChange={(e) => setVaccinated(e.target.value)}
         />
         <label htmlFor="isVaccinated">Yes</label>
@@ -165,7 +171,8 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           type="radio"
           name="vaccinated"
           id="isNotVaccinated"
-          value={vaccinated}
+          value="No"
+          checked={vaccinated === "No"}
           onChange={(e) => setVaccinated(e.target.value)}
         />
         <label htmlFor="isNotVaccinated">No</label>

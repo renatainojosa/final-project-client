@@ -8,8 +8,7 @@ const AuthContext = createContext();
 const AuthProviderWrapper = ({children}) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState('');
-  const [ong, setOng] = useState('');
+  const [userOrOng, setUserOrOng] = useState('');
   const navigate = useNavigate();
 
   const authenticateUser = async () => {
@@ -17,22 +16,17 @@ const AuthProviderWrapper = ({children}) => {
     try {
       if (!storedToken) {
         setIsLoggedIn(false);
-        throw new Error();
+        return;
       }
       const response = await Promise.any([api.verify(storedToken), api.verifyOng(storedToken)])
       
-      console.log(response.type)
-      setUser(response.type);
-      setOng(response.type);
-      console.log(user)
-      console.log(ong)
+      setUserOrOng(response);
       setIsLoggedIn(true);
 
     } catch (error) {
       setIsLoggedIn(false);
       console.log(error)
-      setUser(null);
-      setOng(null);
+      setUserOrOng(null);
     } finally {
       setIsLoading(false);
     }
@@ -53,8 +47,7 @@ const AuthProviderWrapper = ({children}) => {
       value={{
         isLoggedIn,
         isLoading,
-        user,
-        ong,
+        userOrOng,
         storeToken,
         authenticateUser,
         logoutUser,

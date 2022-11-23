@@ -29,16 +29,6 @@ const PetForm = ({ loading, onSubmit, submitText }) => {
     });
   };
 
-  // const handleRadioCategory = (e) => {
-  //   e.preventDefault();
-  //   if (category) {
-  //     console.log('category', category)
-  //     return 'dog'
-  //   } else {
-  //     return 'cat'
-  //   }
-  // };
-
   return (
     <form className="form-container" onSubmit={handleSubmit}>
       <div className="form-control">

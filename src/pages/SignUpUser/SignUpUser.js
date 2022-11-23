@@ -21,8 +21,7 @@ const SignUpUser = () => {
       await api.signup({ name, username, email, password, contact, profileImgUrl });
       navigate("/login");
     } catch (error) {
-      // throw error.response.data || error.message || error;
-      console.log('erro:', error)
+      throw (error.response && error.response.data) || error.message || error;
     } finally {
       setLoading(false);
     }

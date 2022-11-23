@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 import logoImg from "../../images/pets2-removebg-preview.png";
+import NavbarOng from "../NavbarOng/NavbarOng";
+import NavbarUser from "../NavbarUser/NavbarUser";
 
 const Navbar = () => {
   const { isLoggedIn, logoutUser, userOrOng } = useContext(AuthContext);
@@ -40,6 +42,7 @@ const Navbar = () => {
               </li>
             </>
           )}
+
           {isLoggedIn && (
             <>
               <li className="nav-item">
@@ -52,57 +55,46 @@ const Navbar = () => {
                   ONGs
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/my-profile/my-pets" className="nav-link">
-                  My Pets
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/my-profile/new-pet" className="nav-link">
-                  New Pet
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/my-profile" className="nav-link">
-                  My Profile
-                </Link>
-              </li>
-              <button className="btn btn-primary" onClick={logoutUser}>Logout</button>
+              {userOrOng.type === "User" ? <NavbarUser /> : <NavbarOng />}
+              <button className="btn btn-primary" onClick={logoutUser}>
+                Logout
+              </button>
               <li className="nav-item dropdown">
-                <Link to='#'
+                <Link
+                  to="#"
                   className="nav-link dropdown-toggle"
                   data-bs-toggle="dropdown"
                   role="button"
                   aria-expanded="false"
                 >
-                  Hello, stranger!
+                  Hello, {userOrOng.name}!
                 </Link>
+              </li>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link to="/my-profile" className="dropdown-item">
+                    My Profile
+                  </Link>
                 </li>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link to='/my-profile'className="dropdown-item">
-                      My Profile
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to='/my-profile/my-pets' className="dropdown-item">
-                      My Pets
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to='/my-profile/new-pet' className="dropdown-item">
-                      Add a new pet
-                    </Link>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <Link to={logoutUser} className="dropdown-item" href="#">
-                      Something else here
-                    </Link>
-                  </li>
-                </ul>
+                <li>
+                  <Link to="/my-profile/my-pets" className="dropdown-item">
+                    My Pets
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/my-profile/new-pet" className="dropdown-item">
+                    Add a new pet
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <Link to={logoutUser} className="dropdown-item" href="#">
+                    Something else here
+                  </Link>
+                </li>
+              </ul>
             </>
           )}
         </ul>

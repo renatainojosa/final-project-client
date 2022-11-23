@@ -4,8 +4,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EditForm from "../../components/Forms/EditForm/EditForm";
 import api from "../../api/project.api";
+import { useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
+
 
 const MyProfile = () => {
+  const { userOrOng } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -30,13 +34,14 @@ const MyProfile = () => {
 
   return (
     <div>
-      <h1>Hello, alguém!</h1>
+      <h1>Hello, {userOrOng.name}!</h1>
       <div>
         <Link to="/my-profile/my-pets">My Pets</Link>
       </div>
       <div>
         <Link to="/my-profile/new-pet">Register a new pet!</Link>
       </div>
+      <h3>Edit your profile:</h3>
       <EditForm loading={loading} submitText="Save" onSubmit={onSubmit} />
     </div>
   );

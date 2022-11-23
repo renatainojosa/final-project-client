@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import EditFormOng from "../../components/Forms/EditFormOng/EditFormOng";
 import api from "../../api/project.api";
+import { AuthContext } from "../../context/auth.context";
 
 const MyProfileOng = () => {
+    const {userOrOng} = useContext(AuthContext);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -31,7 +33,7 @@ const MyProfileOng = () => {
 
   return (
     <div>
-      <h1>Hello, ONG!</h1>
+      <h1>Hello, {userOrOng.name}!</h1>
       <div>
         <Link to="/my-profile/my-pets">My Pets</Link>
       </div>
