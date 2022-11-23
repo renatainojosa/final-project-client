@@ -110,6 +110,15 @@ class ProjectApi {
     }
   };
 
+  getOngs = async () => {
+    try {
+      const { data } = await this.api.get('/auth-ongs')
+      return data;
+    } catch (error) {
+      throw (error.response && error.response.data) || error.message || error;
+    }
+  }
+
 
 
   signup = async ({ name, username, email, password, contact, profileImgUrl }) => {
