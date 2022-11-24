@@ -1,0 +1,8 @@
+.newpet-container {
+    min-height: 90vh;
+    min-width: 100%;
+    position: absolute;
+    background-image: url('../../images/mulher-com-poodle.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
