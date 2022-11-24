@@ -11,11 +11,6 @@ const HomePage = () => {
         <h4>
           Here you will meet the cutiest pets who needs love and a home! 
         </h4>
-        <Link to='/instructions'>
-          <button className="btn btn-lg">
-            How do I adopt a pet?
-          </button>
-        </Link>
       </div>
     </div>
   );
