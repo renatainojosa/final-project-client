@@ -25,3 +25,13 @@
     flex-direction: column;
     justify-content: space-around;
 }
+
+@media (min-width: 350px) and (max-width: 990px) {
+    .home-container {
+        align-items: center;
+    }
+
+    .home-text {
+        width: 60%;
+    }
+}
