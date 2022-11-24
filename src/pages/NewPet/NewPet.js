@@ -6,7 +6,7 @@ import PetForm from "../../components/Forms/PetForm/PetForm";
 import { AuthContext } from "../../context/auth.context";
 
 const NewPet = () => {
-  const {userOrOng} = useContext(AuthContext);
+  const { userOrOng } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -48,7 +48,9 @@ const NewPet = () => {
 
   return (
     <div className="newpet-container">
-      <h2>Register your pet:</h2>
+      <div>
+        <h2>Register your pet:</h2>
+      </div>
       <PetForm loading={loading} onSubmit={onSubmit} submitText="Register" />
     </div>
   );
