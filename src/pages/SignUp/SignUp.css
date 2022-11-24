@@ -1,0 +1,21 @@
+.cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 90vh;
+    min-width: 100%;
+    position: absolute;
+    /* background-image: url('../../images/beautiful-pet-portrait-of-small-dog-and-cat.jpg'); */
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-position: right;
+}

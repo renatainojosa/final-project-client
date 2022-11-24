@@ -11,14 +11,14 @@ const Navbar = () => {
   const { isLoggedIn, logoutUser, userOrOng } = useContext(AuthContext);
 
   return (
-    <nav className="navbar bg-light">
+    <nav className="navbar fixed-top">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand">
           <img
             src={logoImg}
             alt="Logo"
-            width="30"
-            height="24"
+            width="50"
+            height="44"
             className="d-inline-block align-text-top"
           />
           Adopt a Joseph
@@ -29,7 +29,7 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link
                   to="/signup"
-                  className="nav-link active"
+                  className="nav-link"
                   aria-current="page"
                 >
                   Sign Up
@@ -56,7 +56,7 @@ const Navbar = () => {
                 </Link>
               </li>
               {userOrOng.type === "User" ? <NavbarUser /> : <NavbarOng />}
-              <button className="btn btn-primary" onClick={logoutUser}>
+              <button className="btn btn-warning" onClick={logoutUser}>
                 Logout
               </button>
               <li className="nav-item dropdown">
@@ -67,7 +67,7 @@ const Navbar = () => {
                   role="button"
                   aria-expanded="false"
                 >
-                  Hello, {userOrOng.name}!
+                  Hello, {userOrOng.name}! 
                 </Link>
               </li>
               {/* <ul className="dropdown-menu">

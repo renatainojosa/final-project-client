@@ -101,9 +101,9 @@ class ProjectApi {
     }
   };
 
-  getOneOng = async () => {
+  getOneOng = async (ongId) => {
     try {
-      const { data } = await this.api.get('/auth-ongs/ong')
+      const { data } = await this.api.get(`/auth-ongs/${ongId}`)
       return data;
     } catch (error) {
       throw (error.response && error.response.data) || error.message || error;

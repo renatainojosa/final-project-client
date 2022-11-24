@@ -1,17 +1,18 @@
-import './SignUp.css'
-import {Link} from 'react-router-dom'
+import "./SignUp.css";
+import CardSignup from "../../components/CardSignup/CardSignup";
 
 const SignUp = () => {
   return (
-    <div>
-      <Link to="/signup/user">
-        User
-      </Link>
-      <Link to="/signup/ong">
-        ONG
-      </Link>
-    </div>
-  )
-}
+    <div className="signup-container">
+      <div>
+        <h2>Who you are?</h2>
+      </div>
+        <div className="cards">
+          <CardSignup type="I am a Person" route="/signup/user" image="image" />
+          <CardSignup type="I am a ONG" route="/signup/ong" image="image" />
+        </div>
+      </div>
+  );
+};
 
 export default SignUp;
