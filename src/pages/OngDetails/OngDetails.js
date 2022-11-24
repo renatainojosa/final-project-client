@@ -19,13 +19,16 @@ const OngDetails = () => {
       });
   }, []);
 
+  console.log(ong.acceptDonation)
+
   return (
     <div className="ongDetail-container">
       <img src={ong.profileImgUrl} alt="ongImg" style={{ width: "30rem" }} />
       <div>
         <h1>{ong.name}</h1>
-        <h3>{ong.description}</h3>
-        <p>{ong.age}</p>
+        <h3>{ong.acceptDonation ? 'We accept donnation to help our pets!' 
+        : 'We don\'t accept donnation :('}</h3>
+        <p>{ong.email}</p>
         <p>{}</p>
       </div>
     </div>

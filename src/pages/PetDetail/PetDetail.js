@@ -1,12 +1,11 @@
 import api from "../../api/project.api";
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import './PetDetail.css'
 
 const PetDetail = () => {
     const [loading, setLoading] = useState(false);
     const [pet, setPet] = useState({});
-    const navigate = useNavigate();
     const { petId } = useParams();
 
     useEffect(() => {
