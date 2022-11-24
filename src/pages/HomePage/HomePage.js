@@ -9,7 +9,7 @@ const HomePage = () => {
       <div className="home-text">
         <h2>Welcome!</h2>
         <h4>
-          Here you will met the cutiest pets who needs love and a home! 
+          Here you will meet the cutiest pets who needs love and a home! 
         </h4>
         <Link to='/instructions'>
           <button className="btn btn-lg">
