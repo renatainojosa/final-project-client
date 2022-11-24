@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <div className="home-container">
       <div className="home-text">
-        <h1>Welcome!</h1>
+        <h2>Welcome!</h2>
         <h4>
           Here you will met the cutiest pets who needs love and a home! 
         </h4>
