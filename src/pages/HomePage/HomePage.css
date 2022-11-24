@@ -17,7 +17,8 @@
     color: black;
     background-color: rgba(249, 253, 255, 0.5);
     opacity: 2;
-    width: 35%;
+    width: 30%;
+    margin-left: 20px;
     height: 300px;
     border-radius: 25px;
     display: flex;
