@@ -1,12 +1,26 @@
 .home-container {
     position: absolute;
-    top: 95px;
-    min-height: 99vh;
+    top: 10%;
+    min-height: 90vh;
+    min-width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
     flex-direction: column;
+    background-image: url('../../images/the-pretty-girl-embarcing-cat-and-dog.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.pet-img {
-    bottom: 20px;
+.home-text {
+    color: black;
+    background-color: rgba(249, 253, 255, 0.5);
+    opacity: 2;
+    width: 35%;
+    height: 300px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }

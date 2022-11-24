@@ -1,37 +1,27 @@
 import "./HomePage.css";
 import { Link } from "react-router-dom"
-import imgPets from "../../images/pngwing.com.png";
 
 const HomePage = () => {
   
 
   return (
     <div className="home-container">
-      <div>
+      <div className="home-text">
         <h1>Welcome!</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec velit
-          enim, ultricies vel sapien et, imperdiet imperdiet dolor. Cras a
-          consequat libero, sit amet malesuada mauris. Proin et dolor
-          consectetur, pulvinar libero ac, faucibus odio. Proin at tempor magna.
-          Aenean in sodales tellus. Mauris eu leo non eros dapibus convallis.
-          Donec sed purus nisi. Vestibulum mattis facilisis bibendum. Mauris
-          blandit justo a lectus fringilla, quis pellentesque arcu gravida.
-          Curabitur a sollicitudin erat. Sed nec tempor mauris, vitae facilisis
-          mi. Vestibulum ut vehicula lacus. Ut eu mattis odio, quis ullamcorper
-          nulla.
-        </p>
-      </div>
+        <h5>
+          Here you will met the cutiest pets who needs love and a home! 
+        </h5>
       <div>
         <Link to='/instructions'>
-          <button>
+          <button className="btn btn-warning btn-lg">
             How do I adopt a pet?
           </button>
         </Link>
       </div>
-      <div className="pet-img">
-        <img className="img-pets" src={imgPets} alt="img-pets" />
       </div>
+      {/* <div className="pet-img">
+        <img className="img-pets" src={imgPets} alt="img-pets" />
+      </div> */}
     </div>
   );
 };
