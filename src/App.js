@@ -7,7 +7,6 @@ import Login from './pages/Login/Login';
 import Pets from './pages/Pets/Pets';
 import Ongs from './pages/Ongs/Ongs';
 import Footer from './components/Footer/Footer';
-import Instructions from './pages/Instructions/Instructions';
 import SignUpOng from './pages/SignUpOng/SignUpOng';
 import SignUpUser from './pages/SignUpUser/SignUpUser';
 import Error from './pages/Error/Error';
