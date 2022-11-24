@@ -2,6 +2,10 @@
   overflow-x: hidden;
   text-align: center;
   font-family: 'Acme', sans-serif;
+  min-height: 90vh;
+  min-width: 100%;
+  position: absolute;
+  top: 10%;
 }
 
 @media (prefers-reduced-motion: no-preference) {

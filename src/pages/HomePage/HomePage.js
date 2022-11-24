@@ -1,6 +1,5 @@
 import "./HomePage.css";
 import { Link } from "react-router-dom"
-import iconHeart from "../../images/icon-heart.png"
 
 const HomePage = () => {
   
@@ -13,7 +12,7 @@ const HomePage = () => {
           Here you will met the cutiest pets who needs love and a home! 
         </h4>
         <Link to='/instructions'>
-          <button className="btn btn-warning btn-lg">
+          <button className="btn btn-lg">
             How do I adopt a pet?
           </button>
         </Link>
