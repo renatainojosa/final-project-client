@@ -67,7 +67,7 @@ const Navbar = () => {
                   role="button"
                   aria-expanded="false"
                 >
-                  Hello, {userOrOng.name}!
+                  Hello, {userOrOng.name}! 
                 </Link>
               </li>
               {/* <ul className="dropdown-menu">

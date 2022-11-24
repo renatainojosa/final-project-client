@@ -1,11 +1,11 @@
 import api from "../../api/project.api";
-import { useState, useContext } from "react";
-import { useNavigate, useParams, useEffect } from "react-router-dom";
-import { AuthContext } from "../../context/auth.context";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import './PetDetail.css'
 
 const PetDetail = () => {
-    const { userOrOng } = useContext(AuthContext);
     const [loading, setLoading] = useState(false);
+    const [pet, setPet] = useState({});
     const navigate = useNavigate();
     const { petId } = useParams();
 
@@ -13,7 +13,7 @@ const PetDetail = () => {
         api
           .getOnePet(petId)
           .then((response) => {
-            console.log(response)
+            setPet(response);
           })
           .catch((error) => {
             throw (error.response && error.response.data) || error.message || error;
@@ -21,7 +21,15 @@ const PetDetail = () => {
       }, []);
 
   return (
-    <div>PetDetail</div>
+    <div className="petDetail-container">
+        <img src={pet.profileImgUrl} alt='petImg' style={{width: '30rem'}} />
+    <div>
+       <h1>{pet.name}</h1>
+       <h3>{pet.description}</h3>
+       <p>{pet.age}</p>
+       <p>{}</p>
+    </div>
+    </div>
   )
 }
 

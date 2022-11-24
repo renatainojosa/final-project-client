@@ -1,9 +1,7 @@
 import "./MyPets.css";
 import api from "../../api/project.api";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import CardPet from "../../components/CardPet/CardPet";
-import { Card } from "react-bootstrap";
 
 const MyPets = () => {
   const [myPets, setMyPets] = useState([]);
@@ -57,6 +55,7 @@ const MyPets = () => {
             />
           );
         })}
+        {isLoading && 'Loading...'}
       </div>
     </>
   );

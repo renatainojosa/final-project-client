@@ -35,6 +35,7 @@ const MyProfile = () => {
   return (
     <div>
       <h1>Hello, {userOrOng.name}!</h1>
+      <img src={userOrOng.profileImgUrl} alt='profileImg'/>
       <div>
         <Link to="/my-profile/my-pets">My Pets</Link>
       </div>

@@ -1,0 +1,8 @@
+.petDetail-container {
+    min-height: 87vh;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-evenly;
+    border: 1px solid black;
+}
