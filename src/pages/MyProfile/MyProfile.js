@@ -46,7 +46,7 @@ const MyProfile = () => {
         </div>
         <div className="edit-profile">
           <h3>Edit your profile:</h3>
-          <EditForm loading='Loading...' submitText="Save" onSubmit={onSubmit} />
+          <EditForm loading={loading} submitText="Save" onSubmit={onSubmit} />
         </div>
       </div>
     </div>
