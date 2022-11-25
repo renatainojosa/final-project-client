@@ -50,7 +50,7 @@ const EditPet = () => {
 
   return (
     <div className="edit-pet-container">
-      <EditFormPet loading='Loading...' onSubmit={onSubmit} submitText="Save" />
+      <EditFormPet loading={loading} onSubmit={onSubmit} submitText="Save" />
     </div>
   );
 };
