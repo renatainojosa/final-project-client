@@ -32,11 +32,11 @@ const MyProfile = () => {
       setLoading(false);
     }
   };
-
+  console.log(userOrOng)
   return (
     <div>
       <h1>Hello, {firstLetter(userOrOng.name)}!</h1>
-      <img src={userOrOng.profileImgUrl} alt='profileImg'/>
+      <img src={userOrOng.profileImgUrl} alt='profileImg' style={{width: '18rem'}}/>
       <div>
         <Link to="/my-profile/my-pets">My Pets</Link>
       </div>
