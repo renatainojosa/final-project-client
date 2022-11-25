@@ -3,6 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    width: 40rem;
 }
 
 .signup-container {
@@ -17,6 +18,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size:contain;
-    background-color: #EFB158;
+    background-color: #ECAE54;
     background-position: left;
+}
+
+.title {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
