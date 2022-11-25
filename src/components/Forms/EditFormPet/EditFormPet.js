@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import api from '../../../api/project.api';
 
 const EditFormPet = ({ loading, onSubmit, submitText }) => {
+  const [isLoading, setisLoading] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -16,6 +17,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
   const {petId} = useParams()
 
   useEffect(() => {
+    setisLoading(true);
     api
       .getOnePet(petId)
       .then((response) => {
@@ -29,6 +31,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
         setCastrated(response.castrated);
         setVaccinated(response.vaccinated);
         setProfileImgUrl(response.profileImgUrl);
+        setisLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -185,7 +188,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           onChange={(e) => setProfileImgUrl(e.target.files[0])}
         />
       </div>
-      {loading ? 'Loading...' : <button>{submitText}</button>}
+      {loading ? isLoading : <button>{submitText}</button>}
     </form>
   );
 };

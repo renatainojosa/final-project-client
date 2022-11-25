@@ -49,8 +49,7 @@ const EditPet = () => {
   };
 
   return (
-    <div>
-      <h2>Edit Your Pet</h2>
+    <div className="edit-pet-container">
       <EditFormPet loading='Loading...' onSubmit={onSubmit} submitText="Save" />
     </div>
   );

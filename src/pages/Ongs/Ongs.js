@@ -6,12 +6,15 @@ import { firstLetter } from "../../utils/other.utils";
 
 const Ongs = () => {
   const [ongs, setOngs] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     api
       .getOngs()
       .then((result) => {
         setOngs(result);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -36,6 +39,7 @@ const Ongs = () => {
           );
         })}
       </div>
+      {isLoading && "Loading..."}
     </div>
   );
 };
