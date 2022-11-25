@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const NavbarOng = () => {
+const NavbarOng = ({name}) => {
   return (
     <>
       <li className="nav-item">
@@ -15,7 +15,7 @@ const NavbarOng = () => {
       </li>
       <li className="nav-item">
         <Link to="/my-profile-ong" className="nav-link">
-          My Profile
+          Hello, {name}!
         </Link>
       </li>
     </>

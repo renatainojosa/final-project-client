@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const NavbarUser = () => {
+const NavbarUser = ({name}) => {
   return (
     <>
       <li className="nav-item">
@@ -15,7 +15,7 @@ const NavbarUser = () => {
       </li>
       <li className="nav-item">
         <Link to="/my-profile" className="nav-link">
-          My Profile
+          Hello, {name}!   
         </Link>
       </li>
     </>

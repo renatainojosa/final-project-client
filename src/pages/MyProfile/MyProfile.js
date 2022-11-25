@@ -6,6 +6,7 @@ import EditForm from "../../components/Forms/EditForm/EditForm";
 import api from "../../api/project.api";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
+import { firstLetter } from "../../utils/other.utils";
 
 
 const MyProfile = () => {
@@ -34,7 +35,7 @@ const MyProfile = () => {
 
   return (
     <div>
-      <h1>Hello, {userOrOng.name}!</h1>
+      <h1>Hello, {firstLetter(userOrOng.name)}!</h1>
       <img src={userOrOng.profileImgUrl} alt='profileImg'/>
       <div>
         <Link to="/my-profile/my-pets">My Pets</Link>

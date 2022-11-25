@@ -1,11 +1,11 @@
 import "./Navbar.css";
-// import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 import logoImg from "../../images/pets2-removebg-preview.png";
 import NavbarOng from "../NavbarOng/NavbarOng";
 import NavbarUser from "../NavbarUser/NavbarUser";
+import { firstLetter } from "../../utils/other.utils";
 
 const Navbar = () => {
   const { isLoggedIn, logoutUser, userOrOng } = useContext(AuthContext);
@@ -55,46 +55,10 @@ const Navbar = () => {
                   ONGs
                 </Link>
               </li>
-              {userOrOng.type === "User" ? <NavbarUser /> : <NavbarOng />}
+              {userOrOng.type === "User" ? <NavbarUser name={firstLetter(userOrOng.name)}/> : <NavbarOng name={firstLetter(userOrOng.name)}/>}
               <button className="btn btn-warning" onClick={logoutUser}>
                 Logout
               </button>
-              <li className="nav-item dropdown">
-                <Link
-                  to="#"
-                  className="nav-link dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  role="button"
-                  aria-expanded="false"
-                >
-                  Hello, {userOrOng.name}! 
-                </Link>
-              </li>
-              {/* <ul className="dropdown-menu">
-                <li>
-                  <Link to="/my-profile" className="dropdown-item">
-                    My Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/my-profile/my-pets" className="dropdown-item">
-                    My Pets
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/my-profile/new-pet" className="dropdown-item">
-                    Add a new pet
-                  </Link>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <Link to={logoutUser} className="dropdown-item" href="#">
-                    Something else here
-                  </Link>
-                </li>
-              </ul> */}
             </>
           )}
         </ul>

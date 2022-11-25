@@ -8,6 +8,10 @@ nav {
     color: black;
 }
 
+.nav-item {
+    color: black;
+}
+
 .navbar-brand {
     font-size: 2rem;
 }
