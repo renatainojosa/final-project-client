@@ -16,3 +16,26 @@ footer {
 .btn-new-pet {
   font-size: 1.5rem;
 }
+.form-control {
+  width: 25rem;
+  background-color: rgba(249, 253, 255, 0.5);
+  display: flex;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(249, 253, 255, 0.5);
+  padding: 15px;
+  border-radius: 18px 18px 18px 18px;
+  box-shadow: -2px 0px 11px 0px rgba(42,42,42,.55);
+  width: 30rem;
+  margin-top: 15px;
+}
+
+label {
+  padding: 0;
+  margin: 0;
+}

@@ -5,6 +5,9 @@
 	justify-content: space-around;
 	align-items: stretch;
 	align-content: stretch;
+	background-color:#DCDBD6;
+	/* min-width: 100%;
+	min-height: 90vh; */
 }
 
 .card-body {

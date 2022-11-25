@@ -1,7 +1,7 @@
 import "./UserForm.css";
 import { useState } from "react";
 
-const UserForm = ({ loading, onSubmit, submitText }) => {
+const UserForm = ({ title, loading, onSubmit, submitText }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -16,8 +16,9 @@ const UserForm = ({ loading, onSubmit, submitText }) => {
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
+      <h2 className="title">{title}</h2>
       <div className="form-control">
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name" className="form-label">Name:</label>
         <input
           type="text"
           value={name}
@@ -25,7 +26,7 @@ const UserForm = ({ loading, onSubmit, submitText }) => {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="username" className="form-label">Username:</label>
         <input
           type="text"
           value={username}
@@ -33,7 +34,7 @@ const UserForm = ({ loading, onSubmit, submitText }) => {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="email">E-mail:</label>
+        <label htmlFor="email" className="form-label">E-mail:</label>
         <input
           type="email"
           value={email}
@@ -41,7 +42,7 @@ const UserForm = ({ loading, onSubmit, submitText }) => {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="contact">Contact:</label>
+        <label htmlFor="contact" className="form-label">Contact:</label>
         <input
           type="text"
           value={contact}
@@ -49,7 +50,7 @@ const UserForm = ({ loading, onSubmit, submitText }) => {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password" className="form-label">Password:</label>
         <input
           type="password"
           value={password}
@@ -57,13 +58,13 @@ const UserForm = ({ loading, onSubmit, submitText }) => {
         />
       </div>
       <div className="form-control">
-        <label htmlFor="profileImgUrl">Profile Image:</label>
+        <label htmlFor="profileImgUrl" className="form-label">Profile Image:</label>
         <input
           type="file"
           onChange={(e) => setProfileImgUrl(e.target.files[0])}
         />
       </div>
-      {loading ? "Loading..." : <button>{submitText}</button>}
+      {loading ? 'Loading...' : <button style={{width: '28rem'}} className="btn btn-new-pet btn-signup">{submitText}</button>}
     </form>
   );
 };

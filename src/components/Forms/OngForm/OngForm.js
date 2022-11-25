@@ -1,7 +1,7 @@
 import "./OngForm.css";
 import { useState } from "react";
 
-const OngForm = ({ loading, onSubmit, submitText }) => {
+const OngForm = ({ title, loading, onSubmit, submitText }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -27,6 +27,7 @@ const OngForm = ({ loading, onSubmit, submitText }) => {
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
+     <h2 className="title">{title}</h2>
       <div className="form-control">
         <label htmlFor="name">Name:</label>
         <input
@@ -92,7 +93,7 @@ const OngForm = ({ loading, onSubmit, submitText }) => {
           <option value={false}>No</option>
         </select>
       </div>
-      {loading ? "Loading..." : <button>{submitText}</button>}
+      {loading ? 'Loading...' : <button style={{width: '28rem'}} className="btn btn-new-pet btn-signup">{submitText}</button>}
     </form>
   );
 };

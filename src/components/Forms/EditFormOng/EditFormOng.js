@@ -91,7 +91,7 @@ const EditFormOng = ({ loading, onSubmit, submitText }) => {
           <option value={false}>No</option>
         </select>
       </div>
-      {loading ? "Loading..." : <button>{submitText}</button>}
+      {loading ? 'Loading...' : <button>{submitText}</button>}
     </form>
   )
 };

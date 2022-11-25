@@ -40,8 +40,7 @@ const SignUpOng = () => {
 
   return (
     <div className="signup-container">
-      <h2 className="title">Signup</h2>
-      <OngForm onSubmit={onSubmit} submitText="Register" loading={loading} />
+      <OngForm title='Signup' onSubmit={onSubmit} submitText="Register" loading={loading} />
     </div>
   );
 };

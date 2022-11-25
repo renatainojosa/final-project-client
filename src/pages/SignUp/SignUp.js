@@ -5,7 +5,7 @@ import imageProfile from '../../images/avatar-profile.png'
 const SignUp = () => {
   return (
     <div className="signup-container">
-      <div>
+      <div className="title">
         <h2>Who you are?</h2>
       </div>
         <div className="cards">

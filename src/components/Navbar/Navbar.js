@@ -56,7 +56,7 @@ const Navbar = () => {
                 </Link>
               </li>
               {userOrOng.type === "User" ? <NavbarUser name={firstLetter(userOrOng.name)}/> : <NavbarOng name={firstLetter(userOrOng.name)}/>}
-              <button className="btn btn-warning" onClick={logoutUser}>
+              <button className="btn btn-new-pet" onClick={logoutUser}>
                 Logout
               </button>
             </>
