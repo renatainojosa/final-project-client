@@ -38,11 +38,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2 className="title">Login</h2>
-      <LoginForm onSubmit={onSubmit} submitText="Login" loading={loading} />
-      <h2 className="title">Login Ong</h2>
-      <LoginForm onSubmit={onSubmitOng} submitText="Login Ong" loading={loading} />
+    <div className="login-container login-page">
+      <LoginForm type='Login' onSubmit={onSubmit} submitText="Submit" loading={loading} />
+      <LoginForm type='Login ONG' onSubmit={onSubmitOng} submitText="Submit" loading={loading} />
     </div>
   );
 };

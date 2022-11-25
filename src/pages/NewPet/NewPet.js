@@ -48,10 +48,7 @@ const NewPet = () => {
 
   return (
     <div className="newpet-container">
-      <div>
-        <h2>Register your pet:</h2>
-      </div>
-      <PetForm loading={loading} onSubmit={onSubmit} submitText="Register" />
+      <PetForm loading={loading} onSubmit={onSubmit} submitText="Register Your Pet" />
     </div>
   );
 };
