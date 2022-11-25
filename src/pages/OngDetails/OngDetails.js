@@ -9,10 +9,12 @@ const OngDetails = () => {
   const { ongId } = useParams();
 
   useEffect(() => {
+    setLoading(true)
     api
       .getOneOng(ongId)
       .then((response) => {
         setOng(response);
+        setLoading(false)
       })
       .catch((error) => {
         throw (error.response && error.response.data) || error.message || error;
