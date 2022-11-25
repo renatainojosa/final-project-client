@@ -1,7 +1,7 @@
 import "./UserForm.css";
 import { useState } from "react";
 
-const UserForm = ({ loading, onSubmit, submitText }) => {
+const UserForm = ({ title, loading, onSubmit, submitText }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -16,6 +16,7 @@ const UserForm = ({ loading, onSubmit, submitText }) => {
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
+      <h2 className="title">{title}</h2>
       <div className="form-control">
         <label htmlFor="name" className="form-label">Name:</label>
         <input
@@ -63,7 +64,7 @@ const UserForm = ({ loading, onSubmit, submitText }) => {
           onChange={(e) => setProfileImgUrl(e.target.files[0])}
         />
       </div>
-      {loading ? "Loading..." : <button className="btn btn-new-pet btn-signup">{submitText}</button>}
+      {loading ? "Loading..." : <button style={{width: '28rem'}} className="btn btn-new-pet btn-signup">{submitText}</button>}
     </form>
   );
 };

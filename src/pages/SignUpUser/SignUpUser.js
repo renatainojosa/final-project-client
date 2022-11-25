@@ -29,8 +29,7 @@ const SignUpUser = () => {
 
   return (
     <div className="signup-container">
-      <h2 className="title">Signup</h2>
-      <UserForm onSubmit={onSubmit} submitText="Register" loading={loading} />
+      <UserForm title='Signup' onSubmit={onSubmit} submitText="Register" loading={loading} />
     </div>
   );
 };
