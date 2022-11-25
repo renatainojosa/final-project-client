@@ -15,7 +15,8 @@
     position: absolute;
     background-image: url('../../images/portrait-of-lovely-dog-looking-away.jpg');
     background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-    background-position: right;
+    background-position: center;
+    background-size:contain;
+    background-color: #EFB158;
+    background-position: left;
 }
