@@ -40,15 +40,15 @@ const MyProfile = () => {
           alt="profileImg"
           style={{ width: "18rem" }}
         />
+      </div>
         <div className="links">
-          <Link to="/my-profile/my-pets">My Pets</Link>
-          <Link to="/my-profile/new-pet">Register a new pet!</Link>
+          <Link to="/my-profile/my-pets" className='link'>My Pets</Link>
+          <Link to="/my-profile/new-pet" className='link'>Register a new pet!</Link>
         </div>
         <div className="edit-profile">
           <h3>Edit your profile:</h3>
           <EditForm loading={loading} submitText="Save" onSubmit={onSubmit} />
         </div>
-      </div>
     </div>
   );
 };

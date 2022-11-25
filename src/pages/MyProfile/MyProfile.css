@@ -1,12 +1,35 @@
 .myprofile-container {
     display: flex;
     min-height: 90vh;
-    min-width: 100vh;
+    min-width: 100%;
     padding: 0;
     margin: 0;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:#DCDBD6;
 }
 
 .hello-and-image {
     min-height: 40vh;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 1.7rem;
+    color: black;
+    border: 1px solid #fcebb6;
+    background-color: rgba(249, 253, 255, 0.5);
+    padding: 15px;
+    border-radius: 18px 18px 18px 18px;
+    box-shadow: -2px 0px 11px 0px rgba(42,42,42,.55);
+    width: 15rem;
+    background-color: #fcebb6;
+    margin: 10px;
 }
