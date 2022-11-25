@@ -32,7 +32,6 @@ const MyProfile = () => {
       setLoading(false);
     }
   };
-  console.log(userOrOng)
   return (
     <div>
       <h1>Hello, {firstLetter(userOrOng.name)}!</h1>

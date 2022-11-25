@@ -2,6 +2,7 @@ import './Ongs.css'
 import api from "../../api/project.api";
 import { useState, useEffect } from 'react';
 import CardOng from '../../components/CardOng/CardOng';
+import { firstLetter } from '../../utils/other.utils';
 
 const Ongs = () => {
   const [ongs, setOngs] = useState([]);
@@ -24,7 +25,7 @@ const Ongs = () => {
           <CardOng 
             keyId={ong._id}
             ongImg={ong.profileImgUrl}
-            ongName={ong.name}
+            ongName={firstLetter(ong.name)}
             route={`/ongs/${ong._id}/about`}
             text='About this ONG' />
         )

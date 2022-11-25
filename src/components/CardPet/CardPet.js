@@ -17,10 +17,10 @@ const CardPet = ({
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{description}</p>
         <div className="buttons">
-          <Link to={route} className="btn btn-primary">
+          <Link to={route} className="btn btn-new-pet">
             {text}
           </Link>
-          <button className="btn btn-primary" onClick={clickButton}>
+          <button className="btn btn-new-pet" onClick={clickButton}>
             {buttonText}
           </button>
         </div>
