@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './CardPet.css';
 
 const CardPet = ({
   image,
@@ -11,9 +12,14 @@ const CardPet = ({
   buttonText,
 }) => {
   return (
-    <div className="card" style={{ width: "18rem" }} key={keyId}>
-      <img className="card-img-top" src={image} alt="img pet" />
-      <div className="card-body">
+    <div className="card card-pet" key={keyId} style={{ width: "17rem" }}>
+      <img
+        className="card-img-top"
+        src={image}
+        alt="img pet"
+        style={{ width: "15rem" }}
+      />
+      <div className="card-body" style={{ width: "15rem" }}>
         <h5 className="card-title">{name}</h5>
         <p className="card-text">{description}</p>
         <div className="buttons">
