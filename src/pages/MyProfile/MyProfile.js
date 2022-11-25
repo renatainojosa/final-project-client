@@ -8,7 +8,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 import { firstLetter } from "../../utils/other.utils";
 
-
 const MyProfile = () => {
   const { userOrOng } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
@@ -33,17 +32,23 @@ const MyProfile = () => {
     }
   };
   return (
-    <div>
-      <h1>Hello, {firstLetter(userOrOng.name)}!</h1>
-      <img src={userOrOng.profileImgUrl} alt='profileImg' style={{width: '18rem'}}/>
-      <div>
-        <Link to="/my-profile/my-pets">My Pets</Link>
+    <div className="myprofile-container">
+      <div className="hello-and-img">
+        <h1>Hello, {firstLetter(userOrOng.name)}!</h1>
+        <img
+          src={userOrOng.profileImgUrl}
+          alt="profileImg"
+          style={{ width: "18rem" }}
+        />
+        <div className="links">
+          <Link to="/my-profile/my-pets">My Pets</Link>
+          <Link to="/my-profile/new-pet">Register a new pet!</Link>
+        </div>
+        <div className="edit-profile">
+          <h3>Edit your profile:</h3>
+          <EditForm loading='Loading...' submitText="Save" onSubmit={onSubmit} />
+        </div>
       </div>
-      <div>
-        <Link to="/my-profile/new-pet">Register a new pet!</Link>
-      </div>
-      <h3>Edit your profile:</h3>
-      <EditForm loading={loading} submitText="Save" onSubmit={onSubmit} />
     </div>
   );
 };

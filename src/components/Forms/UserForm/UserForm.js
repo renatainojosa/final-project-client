@@ -64,7 +64,7 @@ const UserForm = ({ title, loading, onSubmit, submitText }) => {
           onChange={(e) => setProfileImgUrl(e.target.files[0])}
         />
       </div>
-      {loading ? "Loading..." : <button style={{width: '28rem'}} className="btn btn-new-pet btn-signup">{submitText}</button>}
+      {loading ? 'Loading...' : <button style={{width: '28rem'}} className="btn btn-new-pet btn-signup">{submitText}</button>}
     </form>
   );
 };

@@ -93,7 +93,7 @@ const OngForm = ({ title, loading, onSubmit, submitText }) => {
           <option value={false}>No</option>
         </select>
       </div>
-      {loading ? "Loading..." : <button style={{width: '28rem'}} className="btn btn-new-pet btn-signup">{submitText}</button>}
+      {loading ? 'Loading...' : <button style={{width: '28rem'}} className="btn btn-new-pet btn-signup">{submitText}</button>}
     </form>
   );
 };

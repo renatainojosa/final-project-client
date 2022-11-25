@@ -69,7 +69,7 @@ const EditForm = ({ loading, onSubmit, submitText }) => {
           onChange={(e) => setProfileImgUrl(e.target.files[0])}
         />
       </div>
-      {loading ? "Loading..." : <button>{submitText}</button>}
+      {loading ? 'Loading...' : <button>{submitText}</button>}
     </form>
   );
 };

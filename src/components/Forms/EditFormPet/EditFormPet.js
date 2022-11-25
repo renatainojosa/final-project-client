@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import api from '../../../api/project.api'
+import api from '../../../api/project.api';
 
 const EditFormPet = ({ loading, onSubmit, submitText }) => {
   const [name, setName] = useState("");
@@ -185,7 +185,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           onChange={(e) => setProfileImgUrl(e.target.files[0])}
         />
       </div>
-      {loading ? "Loading..." : <button>{submitText}</button>}
+      {loading ? 'Loading...' : <button>{submitText}</button>}
     </form>
   );
 };

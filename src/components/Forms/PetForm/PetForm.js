@@ -191,7 +191,7 @@ const PetForm = ({ title, loading, onSubmit, submitText }) => {
         />
       </div>
       {loading ? (
-        "Loading..."
+        'Loading...'
       ) : (
         <button className="btn btn-new-pet" style={{width: '33rem'}}>{submitText}</button>
       )}
