@@ -38,9 +38,11 @@ const MyPets = () => {
   };
 
   return (
-    <>
-      <h2>My Pets</h2>
       <div className="my-pets-container">
+      <div className="title-my-pets">
+        <h2>My Pets</h2>
+      </div>
+      <div className="my-pets-list">
         {myPets.map((pet) => {
           return (
             <CardPet 
@@ -55,9 +57,9 @@ const MyPets = () => {
             />
           );
         })}
+      </div>
         {isLoading && 'Loading...'}
       </div>
-    </>
   );
 };
 

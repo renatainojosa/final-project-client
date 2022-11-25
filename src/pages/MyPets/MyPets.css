@@ -1,19 +1,39 @@
 .my-pets-container {
     display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: flex-start;
 	align-items: stretch;
 	align-content: stretch;
 	background-color:#DCDBD6;
-	/* min-width: 100%;
-	min-height: 90vh; */
+	min-width: 100%;
+	min-height: 87vh;
+}
+
+.title-my-pets {
+	margin-top: 15px;
+}
+
+.my-pets-list {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 15px;
 }
 
 .card-body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	padding: 0;
+	margin: 0;
 }
+
+.card-title {
+	padding: 0;
+	margin: 0;
+}
+

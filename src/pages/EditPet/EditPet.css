@@ -1,0 +1,14 @@
+.edit-pet-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 89vh;
+    min-width: 100%;
+    position: absolute;
+    background-image: url('../../images/beautiful-dog-maltipoo-golden-color-posing-isolated-over-white-background-concept-of-beauty-breed-pets-animal-life-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: right;
+    background-color: #a1daea;
+}
