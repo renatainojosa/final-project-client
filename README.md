@@ -18,15 +18,17 @@ O Adopt a Joseph foi desenvolvido pensando em doações e adoções de animais, 
 
 # Funcionalidades
 
-# :hammer: Funcionalidades do projeto
+# :hammer: Funcionalidades do projeto:
 
-- # Cadatro:
+- ## Cadatro:
  
- <img src="./src/images.readme/signup-print.png" data-canonical-src="./src/images.readme/signup-print.png" width="250" height="250" />
+ <img src="./src/images.readme/signup-print.png" data-canonical-src="./src/images.readme/signup-print.png" width="350" height="250" />
  
  Você pode se cadastrar como pessoa física ou ONG.
 
-- Como adicionar um novo Pet:
+- ## Como adicionar um novo Pet:
+
+<img src="./src/images.readme/new-pet.png" data-canonical-src="./src/images.readme/new-pet.png" width="350" height="250" />
 
 Após se cadastrar e fazer login, basta entra na opção "New Pet" e cadastrar o pet que deseja doar.
 
@@ -36,7 +38,6 @@ Após se cadastrar e fazer login, basta entra na opção "New Pet" e cadastrar o
 
 
 # Desenvolvedores do Projeto
-- Autores
 
 | [<img src="https://avatars.githubusercontent.com/u/105023579?v=4" width=115><br><sub>Walison Abram</sub>](https://github.com/walisonabram) |  [<img src="https://avatars.githubusercontent.com/u/107451445?v=4" width=115><br><sub>Jandson Costa</sub>](https://github.com/renatainojosa) 
 | :---: | :---: | 
