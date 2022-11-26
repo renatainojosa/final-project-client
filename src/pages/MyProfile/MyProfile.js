@@ -14,6 +14,7 @@ const MyProfile = () => {
   const navigate = useNavigate();
 
   const onSubmit = async ({
+    name,
     username,
     email,
     password,
@@ -22,7 +23,7 @@ const MyProfile = () => {
   }) => {
     setLoading(true);
     try {
-      await api.editUser({ username, email, password, contact, profileImgUrl });
+      await api.editUser({ name, username, email, password, contact, profileImgUrl });
       window.alert("Profile updated!");
       navigate("/my-profile");
     } catch (error) {
