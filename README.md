@@ -30,7 +30,7 @@ O Adopt a Joseph foi desenvolvido pensando em doações e adoções de animais, 
 
 <img src="./src/images.readme/new-pet.png" data-canonical-src="./src/images.readme/new-pet.png" width="450" height="250" />
 
-Após se cadastrar e fazer login, basta entra na opção "New Pet" e cadastrar o pet que deseja doar.
+Após se cadastrar e fazer login, basta entrar na opção "New Pet" e cadastrar o pet que deseja doar.
 
 # 📁 Acesso ao Projeto
 

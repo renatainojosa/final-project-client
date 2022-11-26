@@ -18,6 +18,14 @@ nav {
 
 @media (min-width: 350px) and (max-width: 990px) {
     nav {
-        height: 15%;
+        font-size: 1.0rem;
     }
+    .navbar-brand {
+        display: none;
+    }
+    .btn-nav {
+        padding: 0;
+        height: 30px;
+    }
+
 }
