@@ -35,6 +35,7 @@ Após se cadastrar e fazer login, basta entra na opção "New Pet" e cadastrar o
 # 📁 Acesso ao Projeto
 
 **Para acessar o site clique neste link, [Adopt a Joseph](https://adopt-a-joseph.netlify.app/)**
+**Para acessar a API clique neste link, [Adopt a Joseph API](https://github.com/renatainojosa/final-project-server)**
 
 
 # Desenvolvedores do Projeto
