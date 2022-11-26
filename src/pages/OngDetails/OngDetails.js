@@ -21,8 +21,6 @@ const OngDetails = () => {
       });
   }, []);
 
-  console.log(ong.acceptDonation)
-
   return (
     <div className="ongDetail-container">
       <img src={ong.profileImgUrl} alt="ongImg" style={{ width: "30rem" }} />
