@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../../../api/project.api";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/auth.context";
 
 const EditFormOng = ({ loading, onSubmit, submitText }) => {
   const [email, setEmail] = useState("");
@@ -9,10 +11,11 @@ const EditFormOng = ({ loading, onSubmit, submitText }) => {
   const [identification, setIdentification] = useState("");
   const [acceptDonation, setAcceptDonation] = useState("");
   const [profileImgUrl, setProfileImgUrl] = useState("");
+  const { userOrOng } = useContext(AuthContext);
 
   useEffect(() => {
     api
-      .getOneOng()
+      .getOneOng(userOrOng._id)
       .then((response) => {
         setName(response.name);
         setEmail(response.email);
