@@ -1,5 +1,5 @@
-!<img src="./src/images/pets2-removebg-preview.png" data-canonical-src="/src/images/pets2-removebg-preview.png" width="150" height="150" />
 # Adopt a Joseph
+<img src="./src/images/pets2-removebg-preview.png" data-canonical-src="/src/images/pets2-removebg-preview.png" width="150" height="150" />
 
 # Índice 
 
@@ -7,7 +7,7 @@
 * [Índice](#índice)
 * [Descrição do Projeto](#descrição-do-projeto)
 * [Funcionalidades](#funcionalidades)
-* [Acesso ao Projeto](#acesso-ao-projeto)
+* [Acesso ao Projeto](#Acesso-ao-Projeto)
 * [Desenvolvedores do Projeto](#desenvolvedores-do-projeto)
 * [Status do Projeto](#status-do-Projeto)
 
@@ -32,7 +32,7 @@ O Adopt a Joseph foi desenvolvido pensando em doações e adoções de animais, 
 
 Após se cadastrar e fazer login, basta entra na opção "New Pet" e cadastrar o pet que deseja doar.
 
-# 📁 Acesso ao projeto
+# 📁 Acesso ao Projeto
 
 **Para acessar o site clique neste link, [Adopt a Joseph](https://adopt-a-joseph.netlify.app/)**
 
