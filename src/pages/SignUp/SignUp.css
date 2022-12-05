@@ -26,3 +26,16 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+@media (min-width: 350px) and (max-width: 990px) {
+    .cards {
+        flex-direction: column;
+        width: 20rem;
+        min-height: 55vh;
+        justify-content: space-between;
+    }
+
+    .signup-container {
+        background-image: none;
+    }
+}

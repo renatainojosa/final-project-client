@@ -38,7 +38,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container login-page">
+    <div className="login-container login-page login-mobile">
       <LoginForm type='Login' onSubmit={onSubmit} submitText="Submit" loading={loading} />
       <LoginForm type='Login ONG' onSubmit={onSubmitOng} submitText="Submit" loading={loading} />
     </div>

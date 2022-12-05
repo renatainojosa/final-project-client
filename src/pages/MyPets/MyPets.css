@@ -37,3 +37,12 @@
 	margin: 0;
 }
 
+@media (min-width: 350px) and (max-width: 990px) {
+	.my-pets-container {
+		flex-direction: column !important;
+	}
+
+	.my-pets-list {
+		flex-direction: column;
+	}
+}

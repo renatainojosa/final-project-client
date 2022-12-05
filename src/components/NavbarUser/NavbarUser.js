@@ -1,3 +1,4 @@
+import './NavbarUser.css';
 import { Link } from "react-router-dom";
 
 const NavbarUser = ({name}) => {

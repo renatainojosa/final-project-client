@@ -101,6 +101,15 @@ class ProjectApi {
     }
   };
 
+  // getUserById = async (userId) => {
+  //   try {
+  //     const { data } = await this.api.get(`/auth/${userId}`)
+  //     return data;
+  //   } catch (error) {
+  //     throw (error.response && error.response.data) || error.message || error;
+  //   }
+  // };
+
   getOneOng = async (ongId) => {
     try {
       const { data } = await this.api.get(`/auth-ongs/${ongId}`)

@@ -11,3 +11,15 @@
     background-size:contain;
     background-color:#DCDBD6;
 }
+
+@media (min-width: 350px) and (max-width: 990px) {
+    .login-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: none;
+        min-height: 90vh;
+    }
+    
+    
+}

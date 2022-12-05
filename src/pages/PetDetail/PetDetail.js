@@ -8,6 +8,7 @@ const PetDetail = () => {
     const [pet, setPet] = useState({});
     const { petId } = useParams();
 
+
     useEffect(() => {
         api
           .getOnePet(petId)

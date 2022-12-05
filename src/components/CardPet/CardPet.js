@@ -26,7 +26,7 @@ const CardPet = ({
           <Link to={route} className="btn btn-new-pet">
             {text}
           </Link>
-          <button className="btn btn-new-pet" onClick={clickButton}>
+          <button className="btn btn-new-pet btn-card-pet" onClick={clickButton}>
             {buttonText}
           </button>
         </div>

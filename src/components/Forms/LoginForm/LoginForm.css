@@ -3,3 +3,14 @@
     flex-direction: column;
     margin-top: 15px;
 }
+
+@media (min-width: 350px) and (max-width: 990px) {
+    .form-mobile {
+        align-items: center;
+        width: 350px;
+    }
+    .btn-mobile {
+        width: 15rem !important;
+    }
+    
+}

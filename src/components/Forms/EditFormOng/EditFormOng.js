@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import api from "../../../api/project.api";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/auth.context";
+import Loading from "../../Loading/Loading";
 
 const EditFormOng = ({ loading, onSubmit, submitText }) => {
   const [email, setEmail] = useState("");
@@ -94,7 +95,7 @@ const EditFormOng = ({ loading, onSubmit, submitText }) => {
           <option value={false}>No</option>
         </select>
       </div>
-      {loading ? 'Loading...' : <button>{submitText}</button>}
+      {loading ? <Loading /> : <button>{submitText}</button>}
     </form>
   )
 };
