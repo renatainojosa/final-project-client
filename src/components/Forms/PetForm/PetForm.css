@@ -18,3 +18,14 @@ label {
   font-size: 1.3rem;
 }
 
+@media (min-width: 350px) and (max-width: 990px) {
+  .form-container {
+    width: 22rem !important;
+  }
+  label {
+    font-size: 1rem;
+  }
+  input {
+    font-size: 12px;
+  }
+}
