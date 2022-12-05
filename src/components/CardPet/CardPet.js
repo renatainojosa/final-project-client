@@ -26,9 +26,10 @@ const CardPet = ({
           <Link to={route} className="btn btn-new-pet">
             {text}
           </Link>
+          {buttonText &&
           <button className="btn btn-new-pet btn-card-pet" onClick={clickButton}>
             {buttonText}
-          </button>
+          </button>}
         </div>
       </div>
     </div>
