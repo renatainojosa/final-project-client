@@ -11,7 +11,7 @@ const LoginForm = ({type, loading, onSubmit, submitText }) => {
   };
 
   return (
-    <form className="form-container form-login" onSubmit={handleSubmit}>
+    <form className="form-container form-login form-mobile" onSubmit={handleSubmit}>
       <h2 className="title">{type}</h2>
       <div className="form-control mb-3">
         <label htmlFor="email">E-mail:</label>
@@ -29,7 +29,7 @@ const LoginForm = ({type, loading, onSubmit, submitText }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      {loading ? 'Loading...' : <button style={{width: '28rem'}} className="btn btn-new-pet">{submitText}</button>}
+      {loading ? 'Loading...' : <button style={{width: '28rem'}} className="btn btn-new-pet btn-mobile">{submitText}</button>}
     </form>
   );
 };

@@ -1,3 +1,12 @@
 .btn-signup {
     width: 500px;
 }
+
+@media (min-width: 350px) and (max-width: 990px) {
+    .form-container {
+        width: 55vh;
+    }
+    .btn {
+        width: 17rem !important;
+    }
+}

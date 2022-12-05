@@ -33,3 +33,20 @@
     background-color: #fcebb6;
     margin: 10px;
 }
+
+@media (min-width: 350px) and (max-width: 990px) {
+    .myprofile-container {
+        flex-direction: column !important;
+    }
+
+    .profile-img {
+        width: 150px !important;
+    }
+
+    .link {
+        font-size: 1.2rem !important;
+        padding: 10px !important;
+        width: 12rem !important;
+        margin: 5px !important;
+    }
+}

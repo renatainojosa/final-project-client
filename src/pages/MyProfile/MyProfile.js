@@ -37,6 +37,7 @@ const MyProfile = () => {
       <div className="hello-and-img">
         <h1>Hello, {firstLetter(userOrOng.name)}!</h1>
         <img
+          className="profile-img"
           src={userOrOng.profileImgUrl}
           alt="profileImg"
           style={{ width: "18rem" }}

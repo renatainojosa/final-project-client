@@ -16,6 +16,8 @@ footer {
 .btn-new-pet {
   font-size: 1.5rem;
 }
+
+
 .form-control {
   width: 25rem;
   background-color: rgba(249, 253, 255, 0.5);
@@ -39,3 +41,4 @@ label {
   padding: 0;
   margin: 0;
 }
+

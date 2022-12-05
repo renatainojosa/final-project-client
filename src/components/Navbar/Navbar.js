@@ -11,9 +11,9 @@ const Navbar = () => {
   const { isLoggedIn, logoutUser, userOrOng } = useContext(AuthContext);
 
   return (
-    <nav className="navbar fixed-top">
+    <nav className="navbar fixed-top nav-mobile">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand">
+        <Link to="/" className="navbar-brand brand-mobile">
           <img
             src={logoImg}
             alt="Logo"
