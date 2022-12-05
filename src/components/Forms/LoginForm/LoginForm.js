@@ -1,5 +1,6 @@
 import "./LoginForm.css";
 import { useState } from "react";
+import Loading from "../../Loading/Loading";
 
 const LoginForm = ({type, loading, onSubmit, submitText }) => {
   const [email, setEmail] = useState("");
@@ -29,7 +30,7 @@ const LoginForm = ({type, loading, onSubmit, submitText }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      {loading ? 'Loading...' : <button style={{width: '28rem'}} className="btn btn-new-pet btn-mobile">{submitText}</button>}
+      {loading ? <Loading /> : <button style={{width: '28rem'}} className="btn btn-new-pet btn-mobile">{submitText}</button>}
     </form>
   );
 };

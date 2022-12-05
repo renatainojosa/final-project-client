@@ -1,5 +1,6 @@
 import "./PetForm.css";
 import { useState } from "react";
+import Loading from "../../Loading/Loading";
 
 const PetForm = ({ title, loading, onSubmit, submitText }) => {
   const [name, setName] = useState("");
@@ -191,7 +192,7 @@ const PetForm = ({ title, loading, onSubmit, submitText }) => {
         />
       </div>
       {loading ? (
-        'Loading...'
+        <Loading />
       ) : (
         <button className="btn btn-new-pet" style={{width: '33rem'}}>{submitText}</button>
       )}

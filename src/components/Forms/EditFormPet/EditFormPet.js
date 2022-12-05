@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import api from '../../../api/project.api';
+import Loading from "../../Loading/Loading";
 
 const EditFormPet = ({ loading, onSubmit, submitText }) => {
   const [isLoading, setisLoading] = useState(false);
@@ -188,7 +189,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           onChange={(e) => setProfileImgUrl(e.target.files[0])}
         />
       </div>
-      {loading ? 'Loading...' : <button className="btn btn-new-pet" style={{width: '28rem'}}>{submitText}</button>}
+      {loading ? <Loading /> : <button className="btn btn-new-pet" style={{width: '28rem'}}>{submitText}</button>}
     </form>
   );
 };
