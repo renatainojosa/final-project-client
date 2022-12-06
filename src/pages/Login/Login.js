@@ -21,7 +21,7 @@ const Login = () => {
       authenticateUser();
       navigate("/");
     } catch (error) {
-      setError(error);
+      setError(error)
     } finally {
       setLoading(false);
     }
@@ -33,7 +33,7 @@ const Login = () => {
       authenticateUser();
       navigate("/");
     } catch (error) {
-      throw error.response.data || error.message || error;
+      setError(error)
     } finally {
       setLoading(false);
     }

@@ -2,6 +2,7 @@ import api from "../../api/project.api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./PetDetail.css";
+import Loading from "../../components/Loading/Loading";
 
 const PetDetail = () => {
   const [loading, setLoading] = useState(false);
@@ -9,14 +10,17 @@ const PetDetail = () => {
   const { petId } = useParams();
 
   useEffect(() => {
+    setLoading(true)
     api
       .getOnePet(petId)
       .then((response) => {
         setPet(response);
+        setLoading(false)
       })
       .catch((error) => {
         throw (error.response && error.response.data) || error.message || error;
       });
+      
   }, []);
 
   return (
@@ -28,6 +32,7 @@ const PetDetail = () => {
         <p>{pet.age}</p>
         <p>{}</p>
       </div>
+      {loading && <Loading />}
     </div>
   );
 };
