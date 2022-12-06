@@ -19,7 +19,6 @@ const Login = () => {
     try {
       await api.login({ email, password });
       authenticateUser();
-      console.log('deu erro')
       navigate("/");
     } catch (error) {
       setError(error);
