@@ -1,23 +1,19 @@
-import { Link } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 
-const NavbarOng = ({name}) => {
+const NavbarOng = ({ name }) => {
   return (
     <>
-      <li className="nav-item">
-        <Link to="/my-profile-ong/my-pets" className="nav-link">
-          My Pets
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/my-profile-ong/new-pet" className="nav-link">
-          New Pet
-        </Link>
-      </li>
-      <li className="nav-item">
-        <Link to="/my-profile-ong" className="nav-link">
-          Hello, {name}!
-        </Link>
-      </li>
+      <Nav.Link href="/my-profile-ong/my-pets" className="nav-link">
+        My Pets
+      </Nav.Link>
+
+      <Nav.Link href="/my-profile-ong/new-pet" className="nav-link">
+        New Pet
+      </Nav.Link>
+
+      <Nav.Link href="/my-profile-ong" className="nav-link">
+        Hello, {name}!
+      </Nav.Link>
     </>
   );
 };

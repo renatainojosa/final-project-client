@@ -1,19 +1,19 @@
-import "./Navbar.css";
-import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import logoImg from "../../images/pets2-removebg-preview.png";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
-import logoImg from "../../images/pets2-removebg-preview.png";
 import NavbarOng from "../NavbarOng/NavbarOng";
 import NavbarUser from "../NavbarUser/NavbarUser";
 import { firstLetter } from "../../utils/other.utils";
 
-const Navbar = () => {
+const MainNavbar = () => {
   const { isLoggedIn, logoutUser, userOrOng } = useContext(AuthContext);
-
   return (
-    <nav className="navbar fixed-top nav-mobile">
-      <div className="container-fluid">
-        <Link to="/" className="navbar-brand brand-mobile">
+    <Navbar fixed='top' bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="/">
           <img
             src={logoImg}
             alt="Logo"
@@ -22,67 +22,53 @@ const Navbar = () => {
             className="d-inline-block align-text-top"
           />
           Adopt a Joseph
-        </Link>
-        <ul className="nav">
-          {!isLoggedIn && (
-            <>
-              <li className="nav-item">
-                <Link
-                  to="/signup"
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            {!isLoggedIn && (
+              <>
+                <Nav.Link
+                  href="/signup"
                   className="nav-link"
                   aria-current="page"
                 >
                   Sign Up
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/login" className="nav-link">
-                  Login
-                </Link>
-              </li>
-            </>
-          )}
+                </Nav.Link>
 
-          {isLoggedIn && (
-            <>
-              <li className="nav-item">
-                <Link to="/pets" className="nav-link">
+                <Nav.Link href="/login" className="nav-link">
+                  Login
+                </Nav.Link>
+              </>
+            )}
+            {isLoggedIn && (
+              <>
+                <Nav.Link href="/pets" className="nav-link">
                   Pets
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/ongs" className="nav-link">
+                </Nav.Link>
+
+                <Nav.Link href="/ongs" className="nav-link">
                   ONGs
-                </Link>
-              </li>
-              {userOrOng.type === "User" ? <NavbarUser name={firstLetter(userOrOng.name)}/> : <NavbarOng name={firstLetter(userOrOng.name)}/>}
-              <button className="btn btn-new-pet btn-nav" onClick={logoutUser}>
-                Logout
-              </button>
-            </>
-          )}
-        </ul>
-      </div>
-    </nav>
+                </Nav.Link>
+
+                {userOrOng.type === "User" ? (
+                  <NavbarUser name={firstLetter(userOrOng.name)} />
+                ) : (
+                  <NavbarOng name={firstLetter(userOrOng.name)} />
+                )}
+                <button
+                  className="btn btn-new-pet btn-nav justify-content-end"
+                  onClick={logoutUser}
+                >
+                  Logout
+                </button>
+              </>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
-
-// <nav className="nav">
-//     <Link to="/">Home</Link>
-//     {!isLoggedIn && (
-//       <>
-//         <Link to="/login">Login</Link>
-//         <Link to="/signup">Sign up</Link>
-//       </>
-//     )}
-//     {isLoggedIn && (
-//       <>
-//         <Link to="/pets">Pets</Link>
-//         <Link to="/ongs">ONGs</Link>
-//         <Link to="/my-profile">My Profile</Link>
-//         <button onClick={logoutUser}>Logout</button>
-//       </>
-//     )}
-// </nav>
+export default MainNavbar;

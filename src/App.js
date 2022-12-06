@@ -24,24 +24,24 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path='/' element={<HomePage/>}/>
-        <Route path='/signup' element={<SignUp/>}/>
-        <Route path='/signup/user' element={<SignUpUser/>}/>
-        <Route path='/signup/ong' element={<SignUpOng/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/pets' element={<PrivateRoute><Pets/></PrivateRoute>}/>
-        <Route path='/pets/:petId/about' element ={<PrivateRoute><PetDetail /></PrivateRoute>} />
-        <Route path='/ongs' element={<PrivateRoute><Ongs/></PrivateRoute>}/>
-        <Route path='/ongs/:ongId/about' element={<PrivateRoute><OngDetails/></PrivateRoute>}/>
-        <Route path='/my-profile' element={<PrivateRoute><MyProfile /></PrivateRoute>} />
-        <Route path='/my-profile-ong' element={<PrivateRoute><MyProfileOng /></PrivateRoute>} />
-        <Route path='/my-profile-ong/my-pets' element={<PrivateRoute><MyPets /></PrivateRoute>} />
-        <Route path='/my-profile-ong/my-pets/:petId/edit' element={<PrivateRoute><EditPet /></PrivateRoute>} />
-        <Route path='/my-profile-ong/new-pet' element={<PrivateRoute><NewPet /></PrivateRoute>} />
-        <Route path='/my-profile/my-pets' element ={<PrivateRoute><MyPets /></PrivateRoute>} />
-        <Route path='/my-profile/my-pets/:petId/edit' element ={<PrivateRoute><EditPet /></PrivateRoute>} />
-        <Route path='/my-profile/new-pet' element ={<PrivateRoute><NewPet /></PrivateRoute>} />
-        <Route path='/*' element={<Error />} />
+          <Route path='/' element={<HomePage/>}/>
+          <Route path='/signup' element={<SignUp/>}/>
+          <Route path='/signup/user' element={<SignUpUser/>}/>
+          <Route path='/signup/ong' element={<SignUpOng/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/pets' element={<PrivateRoute><Pets/></PrivateRoute>}/>
+          <Route path='/pets/:petId/about' element ={<PrivateRoute><PetDetail /></PrivateRoute>} />
+          <Route path='/ongs' element={<PrivateRoute><Ongs/></PrivateRoute>}/>
+          <Route path='/ongs/:ongId/about' element={<PrivateRoute><OngDetails/></PrivateRoute>}/>
+          <Route path='/my-profile' element={<PrivateRoute><MyProfile /></PrivateRoute>} />
+          <Route path='/my-profile-ong' element={<PrivateRoute><MyProfileOng /></PrivateRoute>} />
+          <Route path='/my-profile-ong/my-pets' element={<PrivateRoute><MyPets /></PrivateRoute>} />
+          <Route path='/my-profile-ong/my-pets/:petId/edit' element={<PrivateRoute><EditPet /></PrivateRoute>} />
+          <Route path='/my-profile-ong/new-pet' element={<PrivateRoute><NewPet /></PrivateRoute>} />
+          <Route path='/my-profile/my-pets' element ={<PrivateRoute><MyPets /></PrivateRoute>} />
+          <Route path='/my-profile/my-pets/:petId/edit' element ={<PrivateRoute><EditPet /></PrivateRoute>} />
+          <Route path='/my-profile/new-pet' element ={<PrivateRoute><NewPet /></PrivateRoute>} />
+          <Route path='/*' element={<Error />} />
       </Routes>
       <Footer/>
     </div>

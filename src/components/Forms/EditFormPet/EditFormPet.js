@@ -189,7 +189,7 @@ const EditFormPet = ({ loading, onSubmit, submitText }) => {
           onChange={(e) => setProfileImgUrl(e.target.files[0])}
         />
       </div>
-      {loading ? <Loading /> : <button className="btn btn-new-pet" style={{width: '28rem'}}>{submitText}</button>}
+      {loading ? <Loading /> : <button className="btn btn-new-pet" style={{width: '20rem'}}>{submitText}</button>}
     </form>
   );
 };

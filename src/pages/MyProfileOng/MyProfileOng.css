@@ -1,6 +1,6 @@
-.myprofile-container {
+.myprofile-container-ong {
     display: flex;
-    min-height: 90vh;
+    min-height: 88vh;
     min-width: 100%;
     padding: 0;
     margin: 0;
@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-evenly;
     background-color:#DCDBD6;
+    margin-top: 72px;
 }
 
 .hello-and-image {
@@ -35,8 +36,9 @@
 }
 
 @media (min-width: 350px) and (max-width: 990px) {
-    .myprofile-container {
-        flex-direction: column !important;
+    .myprofile-container-ong {
+        flex-direction: column;
+        margin-bottom: 24px;
     }
 
     .profile-img {

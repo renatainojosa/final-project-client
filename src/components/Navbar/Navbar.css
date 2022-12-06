@@ -20,13 +20,16 @@ nav {
     .nav-mobile {
         font-size: 1.0rem;
     }
+
     .brand-mobile {
         font-size: 1.3rem;
     }
+
     .brand-mobile img {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
+
     .btn-nav {
         padding: 0;
         height: 30px;

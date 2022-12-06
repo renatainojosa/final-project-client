@@ -4,8 +4,6 @@
   font-family: 'Acme', sans-serif;
   min-height: 90vh;
   min-width: 100%;
-  position: absolute;
-  top: 10%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -28,6 +26,7 @@
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {
