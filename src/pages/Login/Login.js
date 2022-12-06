@@ -3,11 +3,13 @@ import LoginForm from "../../components/Forms/LoginForm/LoginForm";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../api/project.api";
+import Alert from "../../components/Alert/Alert";
 
 import { AuthContext } from "../../context/auth.context";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const { authenticateUser } = useContext(AuthContext);
@@ -19,7 +21,7 @@ const Login = () => {
       authenticateUser();
       navigate("/");
     } catch (error) {
-      throw error.response.data || error.message || error;
+      setError(error);
     } finally {
       setLoading(false);
     }
@@ -38,10 +40,13 @@ const Login = () => {
   };
 
   return (
+    <>
+      {error && <Alert message='E-mail or password is invalid!' />}
     <div className="login-container login-page login-mobile">
       <LoginForm type='Login' onSubmit={onSubmit} submitText="Submit" loading={loading} />
       <LoginForm type='Login ONG' onSubmit={onSubmitOng} submitText="Submit" loading={loading} />
     </div>
+    </>
   );
 };
 
