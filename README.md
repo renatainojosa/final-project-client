@@ -20,7 +20,7 @@ O Adopt a Joseph foi desenvolvido pensando em doações e adoções de animais, 
 
 # :hammer: Funcionalidades do projeto:
 
-- ## Cadatro:
+- ## Cadastro:
  
  <img src="./src/images.readme/signup-print.png" data-canonical-src="./src/images.readme/signup-print.png" width="450" height="250" />
  

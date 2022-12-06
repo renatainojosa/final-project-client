@@ -95,7 +95,7 @@ const EditFormOng = ({ loading, onSubmit, submitText }) => {
           <option value={false}>No</option>
         </select>
       </div>
-      {loading ? <Loading /> : <button>{submitText}</button>}
+      {loading ? <Loading /> : <button className="btn btn-new-pet btn-edit" style={{width: '28rem'}}>{submitText}</button>}
     </form>
   )
 };

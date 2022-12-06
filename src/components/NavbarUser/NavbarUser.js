@@ -1,4 +1,3 @@
-import "./NavbarUser.css";
 import Nav from "react-bootstrap/Nav";
 
 const NavbarUser = ({ name }) => {
