@@ -18,11 +18,11 @@
     opacity: 2;
     width: 30%;
     margin-left: 20px;
-    height: 300px;
+    height: 350px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .btn {
@@ -35,6 +35,6 @@
     }
 
     .home-text {
-        width: 60%;
+        width: 70%;
     }
 }
