@@ -3,6 +3,7 @@ import api from "../../api/project.api";
 import { useState, useEffect } from "react";
 import CardOng from "../../components/CardOng/CardOng";
 import { firstLetter } from "../../utils/other.utils";
+import Loading from "../../components/Loading/Loading";
 
 const Ongs = () => {
   const [ongs, setOngs] = useState([]);
@@ -39,7 +40,7 @@ const Ongs = () => {
           );
         })}
       </div>
-      {isLoading && "Loading..."}
+      {isLoading && <Loading />}
     </div>
   );
 };

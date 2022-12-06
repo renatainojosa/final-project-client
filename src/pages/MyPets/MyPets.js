@@ -2,6 +2,7 @@ import "./MyPets.css";
 import api from "../../api/project.api";
 import { useState, useEffect } from "react";
 import CardPet from "../../components/CardPet/CardPet";
+import Loading from "../../components/Loading/Loading";
 
 const MyPets = () => {
   const [myPets, setMyPets] = useState([]);
@@ -58,7 +59,7 @@ const MyPets = () => {
           );
         })}
       </div>
-        {isLoading && 'Loading...'}
+        {isLoading && <Loading />}
       </div>
   );
 };
