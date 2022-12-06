@@ -1,6 +1,7 @@
 import api from "../../api/project.api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../../components/Loading/Loading";
 import "./OngDetails.css";
 
 const OngDetails = () => {
@@ -23,7 +24,7 @@ const OngDetails = () => {
 
   return (
     <div className="ongDetail-container">
-      <img src={ong.profileImgUrl} alt="ongImg" style={{ width: "30rem" }} />
+      <img src={ong.profileImgUrl} alt="ongImg"/>
       <div>
         <h1>{ong.name}</h1>
         <h3>{ong.acceptDonation ? 'We accept donnation to help our pets!' 
@@ -31,6 +32,7 @@ const OngDetails = () => {
         <p>{ong.email}</p>
         <p>{}</p>
       </div>
+      {loading && <Loading />}
     </div>
   );
 };

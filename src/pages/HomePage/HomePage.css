@@ -1,6 +1,5 @@
 .home-container {
-    position: absolute;
-    min-height: 90vh;
+    min-height: 88vh;
     min-width: 100%;
     display: flex;
     justify-content: center;
@@ -10,6 +9,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin-top: 72px;
 }
 
 .home-text {

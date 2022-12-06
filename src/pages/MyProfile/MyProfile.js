@@ -33,7 +33,7 @@ const MyProfile = () => {
     }
   };
   return (
-    <div className="myprofile-container">
+    <div className="myprofile-container-user">
       <div className="hello-and-img">
         <h1>Hello, {firstLetter(userOrOng.name)}!</h1>
         <img

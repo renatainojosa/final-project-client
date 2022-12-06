@@ -11,15 +11,15 @@
     justify-content: center;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 90vh;
+    min-height: 88vh;
     min-width: 100%;
-    position: absolute;
     background-image: url('../../images/portrait-of-lovely-dog-looking-away.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size:contain;
     background-color: #ECAE54;
     background-position: left;
+    margin-top: 72px;
 }
 
 .title {

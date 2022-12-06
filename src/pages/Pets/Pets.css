@@ -7,7 +7,8 @@
 	align-content: stretch;
 	background-color:#DCDBD6;
 	min-width: 100%;
-	min-height: 87vh;
+	min-height: 88vh;
+	margin-top: 72px;
 }
 
 .title-pets {
@@ -39,6 +40,7 @@
 @media (min-width: 350px) and (max-width: 990px) {
 	.pets-container {
 		flex-direction: column !important;
+		margin-bottom: 24px;
 	}
 
 	.pets-list {
