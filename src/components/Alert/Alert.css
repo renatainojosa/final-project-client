@@ -1,3 +1,12 @@
-.alert {
+.alert-style {
     margin: 0;
+    position: absolute;
+    bottom: 30%;
+    width: 100%;
+}
+
+@media (min-width: 350px) and (max-width: 990px) {
+    .alert-style {
+        bottom: 81%;
+    }
 }
