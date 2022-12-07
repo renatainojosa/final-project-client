@@ -40,13 +40,13 @@ const Login = () => {
   };
 
   return (
-    <>
-      {error && <Alert message='E-mail or password is invalid!' />}
+    
     <div className="login-container login-page login-mobile">
-      <LoginForm type='Login' onSubmit={onSubmit} submitText="Submit" loading={loading} />
-      <LoginForm type='Login ONG' onSubmit={onSubmitOng} submitText="Submit" loading={loading} />
+        {error && <Alert message='E-mail or password is invalid!' />}
+        <LoginForm type='Login' onSubmit={onSubmit} submitText="Submit" loading={loading} />
+        <LoginForm type='Login ONG' onSubmit={onSubmitOng} submitText="Submit" loading={loading} />
     </div>
-    </>
+    
   );
 };
 

@@ -11,7 +11,7 @@ import { firstLetter } from "../../utils/other.utils";
 const MainNavbar = () => {
   const { isLoggedIn, logoutUser, userOrOng } = useContext(AuthContext);
   return (
-    <Navbar fixed='top' bg="light" expand="lg">
+    <Navbar fixed='top' bg="secondary" expand="lg">
       <Container>
         <Navbar.Brand href="/">
           <img
